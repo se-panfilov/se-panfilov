@@ -20,27 +20,27 @@
 
 **[00:00:08]** Incoming transmission detected.
 
-**[00:00:09]** **unknown_source >>** Too busy to play with you, choom. Capri, entertain our guest.
+**[00:00:09]** [<img src="images/exception.png" width="28" alt="Exception">] Too busy to play with you, choom. Capri, have some fun with our guest.
 <br/><br/>
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh! Are we playing? Can I break something? Pretty please?
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I break something? Pretty please?
 <br/><br/>
-[<img src="images/exception.png" width="28" alt="Exception">] **>>** Just show 'em what the future holds. I've got work to do.
+[<img src="images/exception.png" width="28" alt="Exception">] Just show 'em what the future holds. I've got work to do.
 <br/><br/>
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** The future? OHHH! I can do that! Hehehe!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** The f̸u̷ture? OHHH! I can do that! Heh̵e̷h̴e̸!
 <br/><br/>
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** Let's see, let's see… What do we have for **<!-- tarot:date -->**?
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Let's see, let's s̸e̷e̴… What do we have for **<!-- tarot:date -->**?
 <br/><br/>
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh, **<!-- tarot:name -->**! Now THAT'S interesting!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh, **<!-- tarot:name -->**! Now t̸h̷a̴t̸'s interesting!
 <br/><br/>
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** Wanna know what happens next? Of course you do! Here, take a peek!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Wanna know what happens n̴e̷x̸t? Of course you do! Here, take a peek!
 
 > <!-- tarot:text -->
 
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** Hehehe! Good luck with THAT, choom! You're gonna need it!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, choom! You're gonna need it!!
 <br/><br/>
 [<img src="images/exception.png" width="28" alt="Exception">] ...Capri. What the hell did you do this time?
 <br/><br/>
-[<img src="images/capri.png" width="28" alt="Capri">] **>>** What? You told me to show 'em the future! I was being helpful!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** What? You told me to show 'em the future! I was being h̴e̷l̸p̷f̵u̶l!
 <br/><br/>
 [<img src="images/exception.png" width="28" alt="Exception">] Yeah. Sure. Of course you were. And now I have to clean up your mess. Again.
 <br/><br/>
@@ -60,6 +60,17 @@ CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEK
 
 ---
 
-**[00:00:16]** Terminating neural link…
+[<img src="images/capri.png" width="28" alt="Capri">] **>>**
+<img src="images/capri-word/b.svg" width="22" alt="B">
+<img src="images/capri-word/o1.svg" width="20" alt="o">
+<img src="images/capri-word/o2.svg" width="21" alt="o">
+<img src="images/capri-word/o3.svg" width="20" alt="o">
+<img src="images/capri-word/o4.svg" width="24" alt="o">
+<img src="images/capri-word/r.svg" width="19" alt="r">
+<img src="images/capri-word/i.svg" width="13" alt="i">
+<img src="images/capri-word/n.svg" width="21" alt="n">
+<img src="images/capri-word/g.svg" width="23" alt="g">
+<img src="images/capri-word/excl.svg" width="12" alt="!">
+Can we blow something up now?
 
-**[00:00:17]** Connection closed.
+**[00:00:16]** ERROR: Session terminated by remote host.
