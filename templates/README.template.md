@@ -30,10 +30,9 @@
 
 **[00:00:13]** >>
 
-> > <!-- tarot:text -->
+> <!-- tarot:text -->
 
-
-**[00:00:13]** echo Legal disclaimer…
+**[00:00:14]** >> Oh, just forgot: echo Legal disclaimer
 
 **Legal**
 
