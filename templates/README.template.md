@@ -20,12 +20,12 @@
 
 **[00:00:08]** Incoming transmission detected.
 
-**[00:00:09]** **unknown_user >>** Too busy to play with you, choom. Capri, entertain our guest.
+**[00:00:09]** **unknown_source >>** Too busy to play with you, choom. Capri, entertain our guest.
 <br/><br/>
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh! Are we playing? Can I break something? Pretty please?
-
-**unknown_user >>** Just show 'em what the future holds. I've got work to do.
-
+<br/><br/>
+[<img src="images/exception.png" width="28" alt="Exception">]** Just show 'em what the future holds. I've got work to do.
+<br/><br/>
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** The future? OHHH! I can do that! Hehehe!
 <br/><br/>
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** Let's see, let's see… What do we have for **<!-- tarot:date -->**?
@@ -37,14 +37,14 @@
 > <!-- tarot:text -->
 
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** Hehehe! Good luck with THAT, choom! You're gonna need it!
-
-**unknown_user >>** ...Capri. What the hell did you do this time?
-
+<br/><br/>
+[<img src="images/exception.png" width="28" alt="Exception">] ...Capri. What the hell did you do this time?
+<br/><br/>
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** What? You told me to show 'em the future! I was being helpful!
-
-**unknown_user >>** Yeah. Sure. Of course you were. And now I have to clean up your mess. Again.
-
-**unknown_user >>** `printf '%s\n' '[LEGAL NOTICE]' && cat NOTICE.md`
+<br/><br/>
+[<img src="images/exception.png" width="28" alt="Exception">] Yeah. Sure. Of course you were. And now I have to clean up your mess. Again.
+<br/><br/>
+[<img src="images/exception.png" width="28" alt="Exception">] `printf '%s\n' '[LEGAL NOTICE]' && cat NOTICE.md`
 
 ---
 
