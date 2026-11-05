@@ -1,4 +1,8 @@
-## Network Transmission Log [**<!-- tarot:date -->**]
+## Network Transmission Log
+
+```diff
++ [**<!-- tarot:date -->**]
+```
 
 **[00:00:01]** Establishing connection…
 
