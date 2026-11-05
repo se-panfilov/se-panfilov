@@ -1,5 +1,3 @@
-<div align="center">
-
 $ ./connect --target se-panfilov
 
 [00:00:01] Establishing connection...
@@ -17,7 +15,6 @@ Sender: UNKNOWN
 Message: Your fate has already been foretold.
 
 $ _
-</div>
 
 ---
 
