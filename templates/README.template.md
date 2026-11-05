@@ -1,32 +1,30 @@
-$ ./connect --target se-panfilov
+**$** ./connect --target se-panfilov
 
-[00:00:01] Establishing connection...
+**[00:00:01]** Establishing connection…
 
-[00:00:02] ERROR: Connection refused.
+**[00:00:02]** ERROR: Connection refused.
 
-[00:00:03] Retrying... attempt 1
+**[00:00:03]** Retrying… attempt 1
 
-[00:00:04] Reestablishing link...
+**[00:00:04]** Reestablishing link…
 
-[00:00:05] Connection established.
+**[00:00:05]** Connection established.
 
-[00:00:06] Resolving identity: se-panfilov
+**[00:00:06]** Resolving identity: se-panfilov
 
-[00:00:07] ERROR: USER_NOT_FOUND
+**[00:00:07]** ERROR 418: I'm a teapot. Connection refused.
 
-Reason: Subject has gone too deep into the Net.
+**[00:00:08]** Incoming transmission detected.
 
-[00:00:08] Incoming transmission detected.
+**[00:00:09]** >> Too busy to play with you, choom.
 
-Sender: UNKNOWN
+**[00:00:10]** >> Cards warns you. Let's see…
 
-Message: Your fate has already been foretold.
+**[00:00:11]** >> Reading for **<!-- tarot:date -->**…
 
-$ _
+**[00:00:12]** >> Interesting… So it's **<!-- tarot:name -->**.
 
----
-
-[00:00:09] Reading for <!-- tarot:date -->
+**[00:00:12]** Your forecast for today is: <!-- tarot:name -->.
 
 <p align="center">
   <!-- tarot:image -->
@@ -36,9 +34,10 @@ $ _
 
 > <!-- tarot:text -->
 
----
 
-## Legal
+**[00:00:13]** echo Legal disclaimer…
+
+**Legal**
 
 This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED.
 
