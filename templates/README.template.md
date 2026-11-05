@@ -22,25 +22,25 @@
 
 **[00:00:09]** **unknown_user >>** Too busy to play with you, choom. Capri, entertain our guest.
 <br/><br/>
-<img src="images/capri.png" width="28" alt="Capri"> **>>** Ooooh! Are we playing? Can I break something? Pretty please?
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh! Are we playing? Can I break something? Pretty please?
 
 **unknown_user >>** Just show 'em what the future holds. I've got work to do.
 
-<img src="images/capri.png" width="28" alt="Capri"> **>>** The future? OHHH! I can do that! Hehehe!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** The future? OHHH! I can do that! Hehehe!
 <br/><br/>
-<img src="images/capri.png" width="28" alt="Capri"> **>>** Let's see, let's see… What do we have for **<!-- tarot:date -->**?
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Let's see, let's see… What do we have for **<!-- tarot:date -->**?
 <br/><br/>
-<img src="images/capri.png" width="28" alt="Capri"> **>>** Ooooh, **<!-- tarot:name -->**! Now THAT'S interesting!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh, **<!-- tarot:name -->**! Now THAT'S interesting!
 <br/><br/>
-<img src="images/capri.png" width="28" alt="Capri"> **>>** Wanna know what happens next? Of course you do! Here, take a peek!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Wanna know what happens next? Of course you do! Here, take a peek!
 
 > <!-- tarot:text -->
 
-<img src="images/capri.png" width="28" alt="Capri"> **>>** Hehehe! Good luck with THAT, choom! You're gonna need it!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** Hehehe! Good luck with THAT, choom! You're gonna need it!
 
 **unknown_user >>** ...Capri. What the hell did you do this time?
 
-<img src="images/capri.png" width="28" alt="Capri"> **>>** What? You told me to show 'em the future! I was being helpful!
+[<img src="images/capri.png" width="28" alt="Capri">] **>>** What? You told me to show 'em the future! I was being helpful!
 
 **unknown_user >>** Yeah. Sure. Of course you were. And now I have to clean up your mess. Again.
 
