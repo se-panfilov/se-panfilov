@@ -1,7 +1,22 @@
 <div align="center">
 
-![An intercepted neural link session reports that se-panfilov is lost deep in the Net. An unknown sender delivers a prophecy.](pics/terminal.svg)
+$ ./connect --target se-panfilov
 
+[00:00:01] Establishing connection...
+[00:00:02] ERROR: Connection refused.
+[00:00:03] Retrying... attempt 1
+[00:00:04] Reestablishing link...
+[00:00:05] Connection established.
+
+[00:00:06] Resolving identity: se-panfilov
+[00:00:07] ERROR: USER_NOT_FOUND
+Reason: Subject has gone too deep into the Net.
+
+[00:00:08] Incoming transmission detected.
+Sender: UNKNOWN
+Message: Your fate has already been foretold.
+
+$ _
 </div>
 
 ---
