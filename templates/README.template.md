@@ -10,7 +10,7 @@ Night City has a message for you. Each day at 11:00 (Amsterdam time), a GitHub A
 
 ### <!-- tarot:name -->
 
-<!-- tarot:text -->
+> <!-- tarot:text -->
 
 ---
 
