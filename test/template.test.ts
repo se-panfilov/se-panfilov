@@ -61,6 +61,25 @@ Bottom text
     expect(result).not.toContain('tarot:cacheKey');
   });
 
+  it('accepts the {{tarot:name}} form of each placeholder', () => {
+    const template = '{{tarot:image}}\n<img src="images/capri.png?v={{tarot:cacheKey}}" alt="Capri">\n{{ tarot:name }} {{tarot:date}}\n<!-- tarot:text -->';
+    expect(templateProblems(template)).toEqual([]);
+    const result = renderTemplate(template, card, { date: 'date', cacheKey: 'abc123' });
+    expect(result).toContain('<img src="images/capri.png?v=abc123" alt="Capri">');
+    expect(result).toContain('The Fool date');
+    expect(result).not.toContain('tarot:');
+  });
+
+  it('counts both forms of a placeholder together', () => {
+    expect(templateProblems('<!-- tarot:image -->{{tarot:image}}<!-- tarot:text -->')).toEqual([expect.stringContaining('tarot:image')]);
+    expect(templateProblems('<!-- tarot:image --><!-- tarot:text -->{{tarot:card}}')).toEqual([expect.stringContaining('Unknown placeholder "{{tarot:card}}"')]);
+  });
+
+  it('does not process the {{tarot:name}} form in the card text', () => {
+    const injected: Card = { ...card, text: 'Text {{tarot:image}} {{tarot:cacheKey}}' };
+    expect(renderTemplate('{{tarot:image}}\n{{tarot:text}}', injected, { date: 'date', cacheKey: 'k' })).toContain('Text {{tarot:image}} {{tarot:cacheKey}}');
+  });
+
   it('rejects a cache key that is not alphanumeric when the template uses it', () => {
     expect(() => renderTemplate('<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:cacheKey -->', card, { date: 'date', cacheKey: 'a"b' })).toThrow(/cache key/);
   });
