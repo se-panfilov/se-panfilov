@@ -53,6 +53,18 @@ Bottom text
     expect(result).toContain('Text <!-- tarot:image --> <!-- tarot:name -->');
   });
 
+  it('puts the cache key into other image links', () => {
+    const template = '<!-- tarot:image -->\n<img src="images/capri.png?v=<!-- tarot:cacheKey -->" alt="Capri">\n<!-- tarot:text -->\n<img src="images/b.png?v=<!--tarot:cacheKey-->">';
+    const result = renderTemplate(template, card, { date: 'date', cacheKey: 'abc123' });
+    expect(result).toContain('<img src="images/capri.png?v=abc123" alt="Capri">');
+    expect(result).toContain('<img src="images/b.png?v=abc123">');
+    expect(result).not.toContain('tarot:cacheKey');
+  });
+
+  it('rejects a cache key that is not alphanumeric when the template uses it', () => {
+    expect(() => renderTemplate('<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:cacheKey -->', card, { date: 'date', cacheKey: 'a"b' })).toThrow(/cache key/);
+  });
+
   it('rejects a template that is not valid', () => {
     expect(() => renderTemplate('<!-- tarot:text -->', card, { date: 'date', cacheKey: 'k' })).toThrow(/tarot:image/);
   });

@@ -1,6 +1,6 @@
 {
   "name": "se-panfilov-profile-readme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generate README.md with a daily Cyberpunk 2077 tarot card",
   "private": true,
   "type": "module",

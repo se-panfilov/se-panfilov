@@ -4,9 +4,11 @@ import { GeneratorError } from '@tarot/errors';
 
 /**
  * Template placeholders. A placeholder is an HTML comment, so a template stays valid Markdown:
- * `<!-- tarot:image -->`, `<!-- tarot:text -->`, `<!-- tarot:name -->`, and `<!-- tarot:date -->`.
+ * `<!-- tarot:image -->`, `<!-- tarot:text -->`, `<!-- tarot:name -->`, `<!-- tarot:date -->`, and `<!-- tarot:cacheKey -->`.
+ * `<!-- tarot:cacheKey -->` gives the cache key of the run. Use it in other image links, for example
+ * `<img src="images/capri.png?v=<!-- tarot:cacheKey -->" alt="Capri">`.
  */
-export const placeholders = ['image', 'text', 'name', 'date'] as const;
+export const placeholders = ['image', 'text', 'name', 'date', 'cacheKey'] as const;
 export type Placeholder = (typeof placeholders)[number];
 
 /** The number of times each placeholder can occur. One reading shows exactly one card image and one card text. */
@@ -14,7 +16,8 @@ const occurrences: Record<Placeholder, { readonly min: number; readonly max: num
   image: { min: 1, max: 1 },
   text: { min: 1, max: 1 },
   name: { min: 0, max: Infinity },
-  date: { min: 0, max: Infinity }
+  date: { min: 0, max: Infinity },
+  cacheKey: { min: 0, max: Infinity }
 };
 
 const placeholderPattern = /<!--\s*tarot:([A-Za-z0-9_-]*)\s*-->/g;
@@ -80,6 +83,6 @@ export type RenderValues = {
 export function renderTemplate(template: string, card: Card, { date, cacheKey }: RenderValues): string {
   const problems = templateProblems(template);
   if (problems.length) throw new GeneratorError(`The template is not valid:\n- ${problems.join('\n- ')}`);
-  const values: Record<Placeholder, string> = { image: renderImage(card, cacheKey), text: card.text, name: card.name, date };
+  const values: Record<Placeholder, string> = { image: renderImage(card, cacheKey), text: card.text, name: card.name, date, cacheKey };
   return template.replace(placeholderPattern, (_match, name: string) => (isPlaceholder(name) ? values[name] : ''));
 }
