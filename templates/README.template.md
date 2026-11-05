@@ -36,7 +36,7 @@
 
 > <!-- tarot:text -->
 
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, <img src="images/c.svg?v={{tarot:cacheKey}}" width="22" alt="c"><img src="images/h.svg?v={{tarot:cacheKey}}" width="22" alt="h"><img src="images/o4.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/o4.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/m.svg?v={{tarot:cacheKey}}" width="22" alt="m">! You're gonna need it!
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, <img src="images/c.svg?v={{tarot:cacheKey}}" width="22" alt="c"><img src="images/h.svg?v={{tarot:cacheKey}}" width="22" alt="h"><img src="images/o1.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/o3.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/m.svg?v={{tarot:cacheKey}}" width="22" alt="m">! You're gonna need it!
 <br/><br/>
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** ...Capri. What the hell did you do this time?
 <br/><br/>
