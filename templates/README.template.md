@@ -1,5 +1,4 @@
 <p align="right">
-### <!-- tarot:name -->
   <!-- tarot:image -->
 </p>
 
@@ -27,13 +26,11 @@
 
 **[00:00:12]** >> Interesting… So it's **<!-- tarot:name -->**.
 
-**[00:00:12]** Your forecast for today is: <!-- tarot:name -->.
+**[00:00:12]** >> Your forecast for today is: <!-- tarot:name -->.
 
+**[00:00:13]** >>
 
-
-### <!-- tarot:name -->
-
-> <!-- tarot:text -->
+> > <!-- tarot:text -->
 
 
 **[00:00:13]** echo Legal disclaimer…
