@@ -1,0 +1,1 @@
+For the Page of Pentacles, every horizon is the gateway to a new beginning. They inevitably make mistakes and burn bridges, but never lose faith that they are working toward something better. Drawing this card signals a moment when fear of the future dissipates, revealing a promising plan.

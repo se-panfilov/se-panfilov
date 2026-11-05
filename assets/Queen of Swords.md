@@ -1,0 +1,1 @@
+The Queen of Swords rules with her razor wit and a tongue that cuts deeper than folded steel. She seeks truth in all things and will not tolerate deceit. This is a card of clear-eyed independence, wisdom, intellect, and an ability to see through illusions. She walks alone, not because she must, but because few can keep her pace and embrace life without the protection of a mask.

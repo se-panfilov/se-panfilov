@@ -1,0 +1,1 @@
+The Queen of Pentacles lives boldly and wears luxury like a suit of armor. She opens her doors without fear, offering comfort, generosity and connection. She knows what it means to lose oneself and find another standing in their place. This card represents a return to something real.

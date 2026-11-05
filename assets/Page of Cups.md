@@ -1,0 +1,1 @@
+The Page of Cups drifts through the world with open eyes and an open heart. To some, they appear naive; to others, virtuous. This card represents the youthfulness of one's spirit, their hopes, instincts and ideals. Their dreams today will reshape their tomorrow, assuming they survive the arrows of fate.

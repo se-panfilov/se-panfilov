@@ -1,0 +1,30 @@
+# Tarot card of the day
+
+Night City has a message for you. Each day at 11:00 (Amsterdam time), a GitHub Actions workflow draws one card from the Cyberpunk 2077 tarot deck and puts it on this page.
+
+## Reading for <!-- tarot:date -->
+
+<p align="center">
+  <!-- tarot:image -->
+</p>
+
+### <!-- tarot:name -->
+
+<!-- tarot:text -->
+
+---
+
+## How it works
+
+- `npm run readme` selects one random card from [`assets/`](assets) and writes this `README.md` from [`templates/README.template.md`](templates/README.template.md).
+- [The daily workflow](.github/workflows/daily-readme.yml) runs the command and pushes the new `README.md` to `master`.
+- Do not edit `README.md`. Edit the template.
+- The generator comes from [cyberpunk_2077_tarot_dynamic_readme](https://github.com/se-panfilov/cyberpunk_2077_tarot_dynamic_readme).
+
+## Legal
+
+This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED.
+
+The tarot card images and card texts in [`assets/`](assets) come from the game Cyberpunk 2077. They are © CD PROJEKT S.A. All rights reserved. They are used here in a non-commercial fan project under the [CD PROJEKT RED Fan Content Guidelines](https://www.cdprojektred.com/en/fan-content). They are not covered by the MIT license of this repository. See [NOTICE.md](NOTICE.md).
+
+CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEKT S.A.
