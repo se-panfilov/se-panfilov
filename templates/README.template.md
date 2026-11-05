@@ -22,7 +22,7 @@
 
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** Too busy to play with you, choom. Capri, have some fun with our guest.
 <br/><br/>
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I break something? Pretty please?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I <img src="images/b.svg?v={{tarot:cacheKey}}" width="22" alt="b"><img src="images/r.svg?v={{tarot:cacheKey}}" width="22" alt="r"><img src="images/e.svg?v={{tarot:cacheKey}}" width="22" alt="e"><img src="images/a.svg?v={{tarot:cacheKey}}" width="22" alt="a"><img src="images/k.svg?v={{tarot:cacheKey}}" width="22" alt="k"> something? Pretty please?
 <br/><br/>
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** Just show 'em what the future holds. I've got work to do.
 <br/><br/>
@@ -36,7 +36,7 @@
 
 > <!-- tarot:text -->
 
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, choom! You're gonna need it!
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, <img src="images/c.svg?v={{tarot:cacheKey}}" width="22" alt="c"><img src="images/h.svg?v={{tarot:cacheKey}}" width="22" alt="h"><img src="images/o.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/o.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/m.svg?v={{tarot:cacheKey}}" width="22" alt="m">! You're gonna need it!
 <br/><br/>
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** ...Capri. What the hell did you do this time?
 <br/><br/>
@@ -61,6 +61,5 @@ CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEK
 ---
 
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** <img src="images/b.svg?v={{tarot:cacheKey}}" width="26" alt="B"><img src="images/o1.svg?v={{tarot:cacheKey}}" width="24" alt="o"><img src="images/o2.svg?v={{tarot:cacheKey}}" width="28" alt="o"><img src="images/o3.svg?v={{tarot:cacheKey}}" width="23" alt="o"><img src="images/o4.svg?v={{tarot:cacheKey}}" width="29" alt="o"><img src="images/r.svg?v={{tarot:cacheKey}}" width="23" alt="r"><img src="images/i.svg?v={{tarot:cacheKey}}" width="14" alt="i"><img src="images/n.svg?v={{tarot:cacheKey}}" width="27" alt="n"><img src="images/g.svg?v={{tarot:cacheKey}}" width="29" alt="g"><img src="images/excl.svg?v={{tarot:cacheKey}}" width="15" alt="!"> Can we blow something up now?
-Can we blow something up now?
 
 **[00:01:52]** ERROR: Session terminated by remote host.
