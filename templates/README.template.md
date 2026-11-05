@@ -1,5 +1,3 @@
-**$** ./connect --target se-panfilov
-
 **[00:00:01]** Establishing connection…
 
 **[00:00:02]** ERROR: Connection refused.
