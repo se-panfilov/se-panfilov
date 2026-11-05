@@ -1,6 +1,16 @@
-# Tarot card of the day
+<div align="center">
 
-Night City has a message for you. Each day at 11:00 (Amsterdam time), a GitHub Actions workflow draws one card from the Cyberpunk 2077 tarot deck and puts it on this page.
+![An intercepted neural link session reports that se-panfilov is lost deep in the Net. An unknown sender delivers a prophecy.](pics/terminal.svg)
+
+</div>
+
+---
+
+## Reading for <!-- tarot:date -->
+
+<p align="center">
+  <!-- tarot:image -->
+</p>
 
 ## Reading for <!-- tarot:date -->
 

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title id="title">Neural session: user se-panfilov not found</title>
+<desc id="desc">A retro-futuristic terminal, in acid-yellow, cyan and magenta, reporting a failed connection, a lost user, and an ominous tarot transmission.</desc>
+<defs>
+<linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#040609"/><stop offset=".65" stop-color="#0a1018"/><stop offset="1" stop-color="#160e19"/></linearGradient>
+<linearGradient id="yellow" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ffe600"/><stop offset="1" stop-color="#ffab00"/></linearGradient>
+<pattern id="matrix" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#63889b" stroke-opacity=".085"/></pattern>
+<pattern id="scan" width="4" height="5" patternUnits="userSpaceOnUse"><path d="M0 4H4" stroke="#b8f8fa" stroke-opacity=".035"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="screenclip"><rect x="20" y="20" width="1160" height="660" rx="9"/></clipPath>
+</defs>
+<rect width="1200" height="700" fill="#020305"/>
+<rect x="13" y="13" width="1174" height="674" rx="12" fill="url(#back)" stroke="#405160" stroke-width="1.5"/>
+<rect x="19" y="19" width="1162" height="662" rx="9" fill="url(#matrix)"/>
+<rect x="19" y="19" width="1162" height="662" rx="9" fill="url(#scan)"/>
+<g clip-path="url(#screenclip)"><path d="M1020 -15L1160 -15 1010 140 916 140Z" fill="#ffe600" opacity=".095"/><path d="M1125 450L1220 450 1030 700 966 700Z" fill="#ff2daa" opacity=".08"/><path d="M-60 540L160 540 14 720 -80 720Z" fill="#0de1f2" opacity=".065"/></g>
+<path d="M20 66H1180" stroke="#31414b" stroke-width="1"/>
+<rect x="19" y="19" width="1162" height="47" rx="8" fill="#0e151d"/>
+<path d="M19 64H1181" stroke="#293b43"/>
+<circle cx="48" cy="42" r="6" fill="#ff3fa7"/><circle cx="70" cy="42" r="6" fill="#ffe600"/><circle cx="92" cy="42" r="6" fill="#03e5e8"/>
+<text x="118" y="48" font-size="16" font-weight="700" fill="#d6f3f0" font-family="DejaVu Sans Mono,monospace">NEURAL-LINK://SESSION_0001</text>
+<rect x="932" y="31" width="214" height="22" fill="#12190e" stroke="#ffe600" stroke-width="1"/>
+<text x="945" y="47" font-size="12" fill="#ffe600" font-family="DejaVu Sans Mono,monospace">UNAUTHORIZED ACCESS</text>
+<path d="M51 100H130" stroke="#ffe600" stroke-width="5"/>
+<text x="52" y="137" font-size="31" font-weight="900" letter-spacing="1.4" fill="#ffe600" font-family="DejaVu Sans,Arial,sans-serif">THE SIGNAL FOUND YOU.</text>
+<text x="53" y="164" font-size="13" fill="#90a8b6" font-family="DejaVu Sans Mono,monospace">REMOTE TERMINAL / INSTANCE UNKNOWN / TRACE ROUTE DISABLED</text>
+<path d="M50 181H1150" stroke="#30414b"/>
+
+<text x="52" y="218" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">01</text>
+<text x="110" y="218" font-size="19" font-weight="400" fill="#deebed" font-family="DejaVu Sans Mono,monospace">&gt; INITIALIZING CONNECTION...</text>
+<text x="52" y="255" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">02</text>
+<text x="110" y="255" font-size="19" font-weight="400" fill="#deebed" font-family="DejaVu Sans Mono,monospace">&gt; REQUESTING NEURAL HANDSHAKE</text>
+<text x="52" y="292" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">03</text>
+<text x="110" y="292" font-size="19" font-weight="400" fill="#ff548e" font-family="DejaVu Sans Mono,monospace">[ ERROR ] CONNECTION REFUSED</text>
+<text x="52" y="329" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">04</text>
+<text x="110" y="329" font-size="19" font-weight="400" fill="#ffe600" font-family="DejaVu Sans Mono,monospace">&gt; RETRYING... ATTEMPT 01</text>
+<text x="52" y="366" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">05</text>
+<text x="110" y="366" font-size="19" font-weight="400" fill="#d0dce4" font-family="DejaVu Sans Mono,monospace">&gt; RECONNECTING THROUGH UNKNOWN NODE</text>
+<text x="52" y="403" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">06</text>
+<text x="110" y="403" font-size="19" font-weight="400" fill="#16f1df" font-family="DejaVu Sans Mono,monospace">[   OK  ] CONNECTION ESTABLISHED</text>
+<text x="52" y="440" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">07</text>
+<text x="110" y="440" font-size="19" font-weight="400" fill="#d0dce4" font-family="DejaVu Sans Mono,monospace">&gt; LOOKUP: se-panfilov</text>
+<text x="52" y="477" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">08</text>
+<text x="110" y="477" font-size="19" font-weight="700" fill="#ff548e" font-family="DejaVu Sans Mono,monospace">[ FATAL ] USER NOT FOUND</text>
+<text x="52" y="514" font-size="14" fill="#4e6874" font-family="DejaVu Sans Mono,monospace">09</text>
+<text x="110" y="514" font-size="19" font-weight="400" fill="#ffe600" font-family="DejaVu Sans Mono,monospace">  REASON: USER WENT TOO DEEP INTO THE NET.</text>
+<rect x="46" y="543" width="1108" height="106" fill="#10141a" stroke="#ffe600" stroke-width="1.5"/>
+<path d="M46 543H215" stroke="#ffe600" stroke-width="5"/>
+<path d="M985 543H1154" stroke="#ff36a7" stroke-width="3"/>
+<text x="65" y="571" font-family="DejaVu Sans Mono,monospace" font-size="15" fill="#04e7ec">/// INCOMING TRANSMISSION</text>
+<text x="65" y="596" font-family="DejaVu Sans Mono,monospace" font-size="16" fill="#abbcc5">SENDER: <tspan fill="#ff5eaf">UNKNOWN</tspan></text>
+<text x="65" y="626" font-family="DejaVu Sans Mono,monospace" font-weight="700" font-size="21" fill="#ffe600">YOUR FATE HAS BEEN FORETOLD.</text>
+<rect x="472" y="613" width="11" height="17" fill="#ffe600" opacity=".85"/>
+<text x="51" y="674" font-family="DejaVu Sans Mono,monospace" font-size="11" fill="#5f8491">SYS//NO CARRIER</text>
+<text x="919" y="674" font-family="DejaVu Sans Mono,monospace" font-size="11" fill="#5f8491">PACKET_01 / END OF MESSAGE</text>
+</svg>
