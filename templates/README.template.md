@@ -1,7 +1,3 @@
-<p align="right">
-  <!-- tarot:image -->
-</p>
-
 ## Network Transmission Log [**<!-- tarot:date -->**]
 
 **[00:00:01]** Establishing connection…
@@ -33,6 +29,10 @@
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Ooooh, **<!-- tarot:name -->**! Now t̸h̷a̴t̸'s interesting!
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Wanna know what happens n̴e̷x̸t? Of course you do! Here, take a peek!
+
+<p align="right">
+  <!-- tarot:image -->
+</p>
 
 > <!-- tarot:text -->
 
