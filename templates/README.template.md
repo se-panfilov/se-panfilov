@@ -24,7 +24,7 @@
 <br/><br/>
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** Ooooh! Are we playing? Can I break something? Pretty please?
 <br/><br/>
-[<img src="images/exception.png" width="28" alt="Exception">]** Just show 'em what the future holds. I've got work to do.
+[<img src="images/exception.png" width="28" alt="Exception">] **>>** Just show 'em what the future holds. I've got work to do.
 <br/><br/>
 [<img src="images/capri.png" width="28" alt="Capri">] **>>** The future? OHHH! I can do that! Hehehe!
 <br/><br/>
