@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="43" viewBox="0 0 30 43">
+  <g transform="translate(15.00 21.19) rotate(-6.54) skewX(-0.72)">
+    <text x="-0.38" y="1.2" text-anchor="middle" dominant-baseline="middle"
+      font-family="Arial, Helvetica, sans-serif" font-size="30.12" font-weight="800"
+      fill="#59d45f" opacity="0.92">3</text>
+    <text x="-0.03" y="-1.95" text-anchor="middle" dominant-baseline="middle"
+      font-family="Arial, Helvetica, sans-serif" font-size="25.14" font-weight="800"
+      fill="#f52776" stroke="#111111" stroke-width="0.81" paint-order="stroke">3</text>
+  </g>
+  <path d="M 10.5 36 h 6" stroke="#59d45f" stroke-width="1.6" opacity="0.85"/>
+  <path d="M 18.3 6 h 5" stroke="#f52776" stroke-width="1.4" opacity="0.8"/>
+</svg>
