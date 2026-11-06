@@ -166,7 +166,7 @@ describe('date placeholder with symbol images', () => {
     for (let seed = 0; seed < 5; seed += 1) {
       const { content } = generateReadme({ root: makeDefaultRepository(files), random: (max) => (seed + max) % max, cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
       const [system = '', capri = ''] = content.split('\n').filter((line) => line.includes('images/'));
-      expect(system).toContain('<img src="images/6_5.svg?v=k" width="20" alt="6">&emsp;<img src="images/n_5.svg?v=k" width="20" alt="N">');
+      expect(system).toContain('<img src="images/6_5.svg?v=k" width="20" alt="6"> <img src="images/n_5.svg?v=k" width="20" alt="N">');
       expect(system.match(/images\/[a-z0-9]+_[1-4]\.svg/)).toBeNull();
       expect(capri.match(/images\/[a-z0-9]+_5\.svg/)).toBeNull();
     }
