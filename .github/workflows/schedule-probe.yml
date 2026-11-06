@@ -3,13 +3,11 @@
 # A manual start only shows the information. It does not disable the workflow.
 # Delete this file after the check.
 
-#test line for a scheduled launch
-
 name: Schedule Probe
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 permissions:
