@@ -77,7 +77,9 @@ function shuffle<T>(items: readonly T[], random: RandomIndex): T[] {
 export function createKeyRenderer(glyphs: Glyphs, cacheKey: string, random: RandomIndex = secureRandomIndex, systemGlyphs: Glyphs = new Map()): (key: KeyPlaceholder) => string {
   const queues = new Map<string, string[]>();
   const last = new Map<string, string>();
-  const image = (path: string, size: number, symbol: string): string => `<img src="${escapeHtml(encodePath(path))}?v=${cacheKey}" width="${size}" alt="${escapeHtml(symbol)}">`;
+  // GitHub puts each image into a link to the image file, but not an image that is already in a link.
+  // An <a> element without href is not a link, so the symbol image is not clickable.
+  const image = (path: string, size: number, symbol: string): string => `<a><img src="${escapeHtml(encodePath(path))}?v=${cacheKey}" width="${size}" alt="${escapeHtml(symbol)}"></a>`;
   return ({ symbol, size, system }) => {
     const name = symbolFileName(symbol);
     if (system) {
