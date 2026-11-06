@@ -60,6 +60,6 @@ CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEK
 
 ---
 
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** <!-- tarot:key:b:26 --><!-- tarot:key:o:24 --><!-- tarot:key:o:28 --><!-- tarot:key:o:23 --><!-- tarot:key:o:29 --><!-- tarot:key:r:23 --><!-- tarot:key:i:18 --><!-- tarot:key:n:27 --><!-- tarot:key:g:29 --><!-- tarot:key:!:22 --> Can we blow something up now?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** <!-- tarot:key:b:26 --><!-- tarot:key:o:24 --><!-- tarot:key:o:28 --><!-- tarot:key:o:23 --><!-- tarot:key:o:29 --><!-- tarot:key:r:23 --><!-- tarot:key:i:22 --><!-- tarot:key:n:27 --><!-- tarot:key:g:29 --><!-- tarot:key:!:22 --> Can we blow something up now?
 
 **[00:01:52]** ERROR: Session terminated by remote host.
