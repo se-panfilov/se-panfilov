@@ -19,7 +19,7 @@ describe('generateReadme', () => {
 
 Date: 5 November 2026
 
-<img src="assets/The%20Star.png?v=k" alt="The Star" width="300">
+<img src="assets/The%20Star.png?v=k" alt="The Star">
 
 ## The Star
 
@@ -56,7 +56,7 @@ Bottom text
     const root = makeRepository({ 'cards/Death.md': 'Death text.', 'cards/Death.png': 'png', 't.md': '<!-- tarot:image -->\n<!-- tarot:text -->' });
     const result = generateReadme({ root, now, assetsDir: 'cards', templatePath: 't.md', outputPath: 'OUT.md', random: fixedIndex(0), cacheKey: 'k' });
     expect(result.outputPath).toBe(join(root, 'OUT.md'));
-    expect(result.content).toContain('<img src="cards/Death.png?v=k" alt="Death" width="300">\nDeath text.\n');
+    expect(result.content).toContain('<img src="cards/Death.png?v=k" alt="Death">\nDeath text.\n');
   });
 });
 
