@@ -60,17 +60,7 @@ CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEK
 
 ---
 
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>**
-<img src="images/capri-word/b.svg?v={{tarot:cacheKey}}" width="22" alt="B">
-<img src="images/capri-word/o1.svg?v={{tarot:cacheKey}}" width="20" alt="o">
-<img src="images/capri-word/o2.svg?v={{tarot:cacheKey}}" width="21" alt="o">
-<img src="images/capri-word/o3.svg?v={{tarot:cacheKey}}" width="20" alt="o">
-<img src="images/capri-word/o4.svg?v={{tarot:cacheKey}}" width="24" alt="o">
-<img src="images/capri-word/r.svg?v={{tarot:cacheKey}}" width="19" alt="r">
-<img src="images/capri-word/i.svg?v={{tarot:cacheKey}}" width="13" alt="i">
-<img src="images/capri-word/n.svg?v={{tarot:cacheKey}}" width="21" alt="n">
-<img src="images/capri-word/g.svg?v={{tarot:cacheKey}}" width="23" alt="g">
-<img src="images/capri-word/excl.svg?v={{tarot:cacheKey}}" width="12" alt="!">
+<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri"> Capri >> <img src="images/capri-word/b.svg?v={{tarot:cacheKey}}" width="26" alt="B"><img src="images/capri-word/o1.svg?v={{tarot:cacheKey}}" width="24" alt="o"><img src="images/capri-word/o2.svg?v={{tarot:cacheKey}}" width="28" alt="o"><img src="images/capri-word/o3.svg?v={{tarot:cacheKey}}" width="23" alt="o"><img src="images/capri-word/o4.svg?v={{tarot:cacheKey}}" width="29" alt="o"><img src="images/capri-word/r.svg?v={{tarot:cacheKey}}" width="23" alt="r"><img src="images/capri-word/i.svg?v={{tarot:cacheKey}}" width="14" alt="i"><img src="images/capri-word/n.svg?v={{tarot:cacheKey}}" width="27" alt="n"><img src="images/capri-word/g.svg?v={{tarot:cacheKey}}" width="29" alt="g"><img src="images/capri-word/excl.svg?v={{tarot:cacheKey}}" width="15" alt="!"> Can we blow something up now?
 Can we blow something up now?
 
 **[00:00:16]** ERROR: Session terminated by remote host.
