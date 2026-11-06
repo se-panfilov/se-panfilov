@@ -73,15 +73,16 @@ export function createKeyRenderer(glyphs: Glyphs, cacheKey: string, random: Rand
     const name = symbolFileName(symbol);
     const variants = name === undefined ? undefined : glyphs.get(name);
     if (name === undefined || !variants?.length) throw new GeneratorError(`No image for the symbol "${symbol}". Add ${name ?? symbol}_1.svg or ${name ?? symbol}.svg to the symbol image directory.`);
-    let queue = queues.get(name);
+    const queueKey = name;
+    let queue = queues.get(queueKey);
     if (!queue?.length) {
       queue = shuffle(variants, random);
-      const previous = last.get(name);
+      const previous = last.get(queueKey);
       if (queue.length > 1 && queue[0] === previous) queue.push(queue.shift() as string);
-      queues.set(name, queue);
+      queues.set(queueKey, queue);
     }
     const path = queue.shift() as string;
-    last.set(name, path);
+    last.set(queueKey, path);
     return `<img src="${escapeHtml(encodePath(path))}?v=${cacheKey}" width="${size}" alt="${escapeHtml(symbol)}">`;
   };
 }

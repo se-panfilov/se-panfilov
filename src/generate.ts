@@ -7,7 +7,7 @@ import { GeneratorError } from '@tarot/errors';
 import { readTextFile } from '@tarot/files';
 import { createKeyRenderer, loadGlyphs } from '@tarot/glyphs';
 import { pickCard, type RandomIndex, secureRandomIndex } from '@tarot/pick';
-import { keyPlaceholders, renderTemplate } from '@tarot/template';
+import { renderTemplate, usesSymbolImages } from '@tarot/template';
 
 export type GenerateOptions = {
   /** The repository root. */
@@ -62,7 +62,7 @@ export function generateReadme(options: GenerateOptions): GenerateResult {
   const card = pickCard(deck.cards, options.random ?? secureRandomIndex, previous);
   const cacheKey = options.cacheKey ?? randomBytes(8).toString('hex');
   // Read the symbol images only when the template uses them.
-  const renderKey = keyPlaceholders(template).length ? createKeyRenderer(loadGlyphs(options.root, options.imagesDir ?? defaultPaths.images), cacheKey, options.random ?? secureRandomIndex) : undefined;
+  const renderKey = usesSymbolImages(template) ? createKeyRenderer(loadGlyphs(options.root, options.imagesDir ?? defaultPaths.images), cacheKey, options.random ?? secureRandomIndex) : undefined;
   const body = renderTemplate(template, card, { date: readingDate(options.now ?? new Date()), cacheKey, renderKey });
   const content = `${readmeHeader(card, templatePath)}${body.replace(/\n*$/, '\n')}`;
   return { card, content, outputPath, textsWithoutImage: deck.textsWithoutImage, imagesWithoutText: deck.imagesWithoutText };
