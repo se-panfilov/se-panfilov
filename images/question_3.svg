@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="43" viewBox="0 0 28 43" role="img" aria-label="question variant 3">
+ <g transform="translate(14.0 21.5) rotate(-4.38) skewX(1.63)">
+  <text x="-0.29" y="1.62" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-size="28.94" font-weight="800" fill="#f52776" opacity="0.93">?</text>
+  <text x="-1.89" y="0.82" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-size="28.44" font-weight="800" fill="#59d45f" stroke="#111111" stroke-width="0.55" paint-order="stroke">?</text>
+ </g>
+ <path d="M4.2 36h5" stroke="#f52776" stroke-width="1.4" opacity="0.85"/>
+ <path d="M20.2 6h4" stroke="#59d45f" stroke-width="1.4" opacity="0.8"/>
+</svg>

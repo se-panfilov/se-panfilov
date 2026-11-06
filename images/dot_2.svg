@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="42" viewBox="0 0 22 42" role="img" aria-label="dot variant 2">
+ <g transform="translate(11.0 29.0) rotate(6.54) skewX(4.06)">
+  <text x="-0.45" y="-0.71" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-size="30.52" font-weight="800" fill="#59d45f" opacity="0.93">.</text>
+  <text x="-2.05" y="-1.51" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-size="30.02" font-weight="800" fill="#f52776" stroke="#111111" stroke-width="0.55" paint-order="stroke">.</text>
+ </g>
+ <path d="M3.3 35h5" stroke="#59d45f" stroke-width="1.4" opacity="0.85"/>
+ <path d="M15.8 6h4" stroke="#f52776" stroke-width="1.4" opacity="0.8"/>
+</svg>
