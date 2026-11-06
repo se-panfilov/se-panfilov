@@ -2,6 +2,8 @@
   <!-- tarot:image -->
 </p>
 
+## Network Transmission Log
+
 **[00:00:01]** Establishing connection…
 
 **[00:00:02]** ERROR: Connection refused.
@@ -18,28 +20,47 @@
 
 **[00:00:08]** Incoming transmission detected.
 
-**[00:00:09]** >> Too busy to play with you, choom.
+**[00:00:09]** **unknown >>** Too busy to play with you, choom. Capri, entertain our guest.
+<br/><br/>
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** Ooooh! Are we playing? Can I break something? Pretty please?
 
-**[00:00:10]** >> But the deck has a message for you. Let's see…
+**unknown >>** Just show 'em what the future holds. I've got work to do.
 
-**[00:00:11]** >> Running a reading for **<!-- tarot:date -->**…
-
-**[00:00:12]** >> Well, well… **<!-- tarot:name -->**. Interesting.
-
-**[00:00:13]** >> Here's what the Net has in store for you today:
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** The future? OHHH! I can do that! Hehehe!
+<br/><br/>
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** Let's see, let's see… What do we have for **<!-- tarot:date -->**?
+<br/><br/>
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** Ooooh, **<!-- tarot:name -->**! Now THAT'S interesting!
+<br/><br/>
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** Wanna know what happens next? Of course you do! Here, take a peek!
 
 > <!-- tarot:text -->
 
-**[00:00:14]** >> Oh, shit. Almost forgot. Corporate compliance…
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** Hehehe! Good luck with THAT, choom! You're gonna need it!
 
-**[00:00:15]** >> `echo '[LEGAL NOTICE]' && cat NOTICE.md`
+**unknown >>** ...Capri. What the hell did you do this time?
+
+<img src="images/capri.png" width="28" alt="Capri"> **Capri >>** What? You told me to show 'em the future! I was being helpful!
+
+**unknown >>** Yeah. Sure. Of course you were. And now I have to clean up your mess. Again.
+
+**unknown >>** `printf '%s\n' '[LEGAL NOTICE]' && cat NOTICE.md`
+
+---
 
 **Legal**
 
 This is an unofficial fan work and is not affiliated with, approved by, or endorsed by CD PROJEKT RED.
 
-The tarot card images and card texts in [`assets/`](assets) are from *Cyberpunk 2077*. © CD PROJEKT S.A. All rights reserved.
+The tarot card images and card texts in [`assets/`](assets) come from *Cyberpunk 2077*. They are © CD PROJEKT S.A. All rights reserved.
 
-They are used in this non-commercial fan project in accordance with the [CD PROJEKT RED Fan Content Guidelines](https://www.cdprojektred.com/en/fan-content). These assets are excluded from the MIT license of this repository. See [NOTICE.md](NOTICE.md).
+They are used here in a non-commercial fan project under the [CD PROJEKT RED Fan Content Guidelines](https://www.cdprojektred.com/en/fan-content). They are not covered by the MIT license of this repository. See [NOTICE.md](NOTICE.md).
 
 CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEKT S.A.
+
+---
+
+**[00:00:16]** Terminating neural link…
+
+**[00:00:17]** Connection closed.
+
