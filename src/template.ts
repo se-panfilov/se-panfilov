@@ -5,8 +5,10 @@ import { GeneratorError } from '@tarot/errors';
 /**
  * Template placeholders. A placeholder is an HTML comment, so a template stays valid Markdown:
  * `<!-- tarot:image -->`, `<!-- tarot:text -->`, `<!-- tarot:name -->`, `<!-- tarot:date -->`, and `<!-- tarot:cacheKey -->`.
+ * Each placeholder also has a second form, `{{tarot:name}}`, for places where an HTML comment looks wrong,
+ * for example in an HTML attribute.
  * `<!-- tarot:cacheKey -->` gives the cache key of the run. Use it in other image links, for example
- * `<img src="images/capri.png?v=<!-- tarot:cacheKey -->" alt="Capri">`.
+ * `<img src="images/capri.png?v={{tarot:cacheKey}}" alt="Capri">`.
  */
 export const placeholders = ['image', 'text', 'name', 'date', 'cacheKey'] as const;
 export type Placeholder = (typeof placeholders)[number];
@@ -20,7 +22,8 @@ const occurrences: Record<Placeholder, { readonly min: number; readonly max: num
   cacheKey: { min: 0, max: Infinity }
 };
 
-const placeholderPattern = /<!--\s*tarot:([A-Za-z0-9_-]*)\s*-->/g;
+// The two forms of a placeholder: `<!-- tarot:name -->` and `{{tarot:name}}`.
+const placeholderPattern = /<!--\s*tarot:([A-Za-z0-9_-]*)\s*-->|\{\{\s*tarot:([A-Za-z0-9_-]*)\s*\}\}/g;
 
 function isPlaceholder(value: string): value is Placeholder {
   return (placeholders as readonly string[]).includes(value);
@@ -31,7 +34,7 @@ export function templateProblems(template: string): string[] {
   const problems: string[] = [];
   const counts = new Map<Placeholder, number>();
   for (const match of template.matchAll(placeholderPattern)) {
-    const name = match[1] ?? '';
+    const name = match[1] ?? match[2] ?? '';
     if (!isPlaceholder(name)) {
       problems.push(`Unknown placeholder "${match[0]}". Known placeholders: ${placeholders.map((item) => `<!-- tarot:${item} -->`).join(', ')}.`);
       continue;
@@ -84,5 +87,8 @@ export function renderTemplate(template: string, card: Card, { date, cacheKey }:
   const problems = templateProblems(template);
   if (problems.length) throw new GeneratorError(`The template is not valid:\n- ${problems.join('\n- ')}`);
   const values: Record<Placeholder, string> = { image: renderImage(card, cacheKey), text: card.text, name: card.name, date, cacheKey };
-  return template.replace(placeholderPattern, (_match, name: string) => (isPlaceholder(name) ? values[name] : ''));
+  return template.replace(placeholderPattern, (_match, comment: string | undefined, braces: string | undefined) => {
+    const name = comment ?? braces ?? '';
+    return isPlaceholder(name) ? values[name] : '';
+  });
 }
