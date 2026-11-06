@@ -10,6 +10,8 @@ import { GeneratorError } from '@tarot/errors';
  * `<!-- tarot:cacheKey -->` gives the cache key of the run. Use it in other image links, for example
  * `<img src="images/capri.png?v={{tarot:cacheKey}}" alt="Capri">`.
  * `<!-- tarot:key:SYMBOL:SIZE -->` gives the image of one symbol, for example `<!-- tarot:key:a:24 -->`. See `@tarot/glyphs`.
+ * `<!-- tarot:date:STYLE:SIZE -->` gives the date as symbol images, for example `<!-- tarot:date:capri:24 -->`.
+ * STYLE is a label only. The images always come from `images/`.
  */
 export const placeholders = ['image', 'text', 'name', 'date', 'cacheKey'] as const;
 export type Placeholder = (typeof placeholders)[number];
@@ -31,6 +33,28 @@ const keyPattern = /^key:([A-Za-z0-9!?#@.,]):([1-9]\d{0,3})$/;
 const maxKeySize = 1000;
 
 export type KeyPlaceholder = { readonly symbol: string; readonly size: number };
+
+/** A date placeholder with symbol images: `date`, the style, and the image width in pixels. */
+const styledDatePattern = /^date:([a-z0-9][a-z0-9_-]{0,31}):([1-9]\d{0,3})$/;
+
+export type StyledDatePlaceholder = { readonly style: string; readonly size: number };
+
+/** Parse the name of a date placeholder with symbol images, for example `date:capri:24`. Returns undefined for other names. */
+export function parseStyledDate(name: string): StyledDatePlaceholder | undefined {
+  const match = styledDatePattern.exec(name);
+  if (!match?.[1] || !match[2]) return undefined;
+  const size = Number(match[2]);
+  return size <= maxKeySize ? { style: match[1], size } : undefined;
+}
+
+/** True when the template has placeholders that use symbol images. */
+export function usesSymbolImages(template: string): boolean {
+  for (const match of template.matchAll(placeholderPattern)) {
+    const name = match[1] ?? match[2] ?? '';
+    if (parseKey(name) || parseStyledDate(name)) return true;
+  }
+  return false;
+}
 
 /** Parse the name of a symbol placeholder, for example `key:a:24`. Returns undefined for other names. */
 export function parseKey(name: string): KeyPlaceholder | undefined {
@@ -67,8 +91,17 @@ export function templateProblems(template: string): string[] {
         );
       continue;
     }
+    if (name.startsWith('date:')) {
+      if (!parseStyledDate(name))
+        problems.push(
+          `The placeholder "${match[0]}" is not valid. Use <!-- tarot:date:STYLE:SIZE -->: a style of lowercase letters, digits, _ and -, and a width from 1 to ${maxKeySize}, for example <!-- tarot:date:capri:24 -->.`
+        );
+      continue;
+    }
     if (!isPlaceholder(name)) {
-      problems.push(`Unknown placeholder "${match[0]}". Known placeholders: ${placeholders.map((item) => `<!-- tarot:${item} -->`).join(', ')}, <!-- tarot:key:SYMBOL:SIZE -->.`);
+      problems.push(
+        `Unknown placeholder "${match[0]}". Known placeholders: ${placeholders.map((item) => `<!-- tarot:${item} -->`).join(', ')}, <!-- tarot:key:SYMBOL:SIZE -->, <!-- tarot:date:STYLE:SIZE -->.`
+      );
       continue;
     }
     counts.set(name, (counts.get(name) ?? 0) + 1);
@@ -105,6 +138,11 @@ export function renderImage(card: Card, cacheKey: string): string {
   return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="100px">`;
 }
 
+/** Make symbol images for each letter and digit of a text. Spaces stay. Other characters are kept as escaped text. */
+export function renderSymbols(text: string, size: number, renderKey: (key: KeyPlaceholder) => string): string {
+  return text.replace(/[A-Za-z0-9]|[^A-Za-z0-9]+/g, (part) => (/^[A-Za-z0-9]$/.test(part) ? renderKey({ symbol: part, size }) : escapeHtml(part)));
+}
+
 export type RenderValues = {
   /** The date of the reading. */
   readonly date: string;
@@ -126,8 +164,10 @@ export function renderTemplate(template: string, card: Card, { date, cacheKey, r
     const name = comment ?? braces ?? '';
     if (isPlaceholder(name)) return values[name];
     const key = parseKey(name);
-    if (!key) return '';
+    const styledDate = parseStyledDate(name);
+    if (!key && !styledDate) return '';
     if (!renderKey) throw new GeneratorError('The template has symbol placeholders, but no symbol images are available.');
-    return renderKey(key);
+    if (key) return renderKey(key);
+    return renderSymbols(date, (styledDate as StyledDatePlaceholder).size, renderKey);
   });
 }

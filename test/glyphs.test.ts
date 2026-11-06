@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 import { generateReadme } from '@tarot/generate';
 import { createKeyRenderer, type Glyphs, loadGlyphs, symbolFileName } from '@tarot/glyphs';
-import { keyPlaceholders, parseKey, templateProblems } from '@tarot/template';
+import { keyPlaceholders, parseKey, parseStyledDate, renderSymbols, templateProblems } from '@tarot/template';
 import { describe, expect, it } from 'vitest';
 
 import { fixedIndex, makeDefaultRepository, makeRepository } from './helpers';
@@ -122,5 +122,41 @@ describe('generateReadme with symbol placeholders', () => {
   it('rejects a symbol without an image', () => {
     const root = makeDefaultRepository({ 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:key:q:24 -->\n', 'images/a_1.svg': '' });
     expect(() => generateReadme({ root, random: fixedIndex(0) })).toThrow(/No image for the symbol "q"/);
+  });
+});
+
+const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'.match(/./g) ?? [];
+
+describe('date placeholder with symbol images', () => {
+  it('parses and checks the placeholder', () => {
+    expect(parseStyledDate('date:capri:24')).toEqual({ style: 'capri', size: 24 });
+    for (const name of ['date:capri', 'date:Capri:24', 'date::24', 'date:capri:0', 'date:../x:24', 'date:capri:24:1']) expect(parseStyledDate(name)).toBeUndefined();
+    const base = '<!-- tarot:image --><!-- tarot:text -->';
+    expect(templateProblems(`${base}<!-- tarot:date:capri:24 -->{{tarot:date:capri:10}}`)).toEqual([]);
+    expect(templateProblems(`${base}<!-- tarot:date:Capri:24 -->`)).toEqual([expect.stringContaining('is not valid')]);
+  });
+
+  it('makes an image for each letter and digit and keeps the spaces', () => {
+    const glyphSet: Glyphs = new Map(alphabet.map((name) => [name, [`images/${name}.svg`]]));
+    expect(renderSymbols('5 Nov', 24, createKeyRenderer(glyphSet, 'k', fixedIndex(0)))).toBe(
+      '<img src="images/5.svg?v=k" width="24" alt="5"> <img src="images/n.svg?v=k" width="24" alt="N"><img src="images/o.svg?v=k" width="24" alt="o"><img src="images/v.svg?v=k" width="24" alt="v">'
+    );
+  });
+
+  it('puts the date as symbol images from images/ into the README', () => {
+    const files: Record<string, string> = { 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:date:capri:24 -->\n' };
+    for (const name of alphabet) files[`images/${name}.svg`] = '';
+    const { content } = generateReadme({ root: makeDefaultRepository(files), random: fixedIndex(0), cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
+    const expected = (('6 November 2026'.match(/./g) ?? []) as string[]).map((c) => (c === ' ' ? ' ' : `<img src="images/${c.toLowerCase()}.svg?v=k" width="24" alt="${c}">`)).join('');
+    expect(content).toContain(`\n${expected}\n`);
+  });
+
+  it('uses different variants of the same letter in the date', () => {
+    const files: Record<string, string> = { 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n{{tarot:date:capri:24}}\n' };
+    for (const name of alphabet) for (const variant of [1, 2]) files[`images/${name}_${variant}.svg`] = '';
+    const { content } = generateReadme({ root: makeDefaultRepository(files), random: fixedIndex(0), cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
+    const eImages = content.match(/images\/e_\d\.svg/g) ?? [];
+    expect(eImages).toHaveLength(2);
+    expect(new Set(eImages).size).toBe(2);
   });
 });
