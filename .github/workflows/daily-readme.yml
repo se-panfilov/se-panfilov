@@ -14,8 +14,6 @@ on:
     # at both times. The "gate" job continues only at 11:00 or later in Amsterdam, and only one time each day.
     # A start some minutes after the full hour is less often delayed or dropped by GitHub.
     - cron: '3 9,10 * * *'
-    # TEMPORARY: one test start at 11:50 in Amsterdam. Remove after the test.
-    - cron: '50 10 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -50,7 +48,6 @@ jobs:
       - id: check
         env:
           EVENT: ${{ github.event_name }}
-          SCHEDULE: ${{ github.event.schedule }}
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
         run: |
@@ -64,11 +61,6 @@ jobs:
           if [ "$hour" -lt 11 ]; then
             echo "It is before 11:00 in Amsterdam. Nothing to do."
             echo 'run=false' >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          # TEMPORARY: the test start skips the next check. Remove after the test.
-          if [ "$SCHEDULE" = '50 10 * * *' ]; then
-            echo 'run=true' >> "$GITHUB_OUTPUT"
             exit 0
           fi
           # Skip when the workflow already pushed README.md today (Amsterdam date).
