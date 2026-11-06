@@ -13,14 +13,6 @@ Night City has a message for you. Each day at 11:00 (Amsterdam time), a GitHub A
 
 Temperance is the card of balance. It may symbolize self-restraint or the gradual shift toward a more mature state of equilibrium. Temperance is associated with being in control of oneself as well as the desire to achieve inner peace.
 
----
-
-## How it works
-
-- `npm run readme` selects one random card from [`assets/`](assets) and writes this `README.md` from [`templates/README.template.md`](templates/README.template.md).
-- [The daily workflow](.github/workflows/daily-readme.yml) runs the command and pushes the new `README.md` to `master`.
-- Do not edit `README.md`. Edit the template.
-- The generator comes from [cyberpunk_2077_tarot_dynamic_readme](https://github.com/se-panfilov/cyberpunk_2077_tarot_dynamic_readme).
 
 ## Legal
 
