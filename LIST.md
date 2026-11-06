@@ -3,7 +3,7 @@
 A manual test page. It shows each card image with its text, so that you can see that no card is missing.
 Edit this page by hand when you add, remove, or rename a card in [`assets/`](assets).
 
-This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED. The card images and texts are © CD PROJEKT S.A. See [NOTICE.md](NOTICE.md).
+This is an unofficial fan work and is not affiliated with, approved by, or endorsed by CD PROJEKT RED. The card images and texts are © CD PROJEKT S.A. See [NOTICE.md](NOTICE.md).
 
 ## Major Arcana
 

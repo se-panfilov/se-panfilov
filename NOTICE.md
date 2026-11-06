@@ -1,6 +1,6 @@
 # Notice
 
-This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED.
+This is an unofficial fan work and is not affiliated with, approved by, or endorsed by CD PROJEKT RED.
 
 ## Two licenses
 
@@ -16,7 +16,7 @@ CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEK
 The guidelines permit non-commercial fan content. This repository follows these conditions:
 
 - No commercial use. Do not sell the content, put it behind a paywall, or use it in a paid product.
-- The notice "This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED" is shown in `README.md`, `LIST.md`, and this file.
+- The notice "This is an unofficial fan work and is not affiliated with, approved by, or endorsed by CD PROJEKT RED" is shown in `README.md`, `LIST.md`, and this file.
 - Nothing in this repository states or suggests that CD PROJEKT RED supports or endorses it.
 - The content of the game stays the property of CD PROJEKT RED.
 
