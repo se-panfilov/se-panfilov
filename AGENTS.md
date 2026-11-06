@@ -142,7 +142,7 @@ Each placeholder has two forms: `<!-- tarot:name -->` and `{{tarot:name}}`. Use 
 - Read this section before you change or add a workflow.
 - Pin actions to full commit SHAs with version comments, never tags or branches.
 - Give jobs only necessary token permissions. Use `persist-credentials: false` for checkout.
-- Only the Daily README workflow has `contents: write`. It commits only `README.md`.
+- Only the `push` job of the Daily README workflow has `contents: write`. It commits only `README.md`, and it runs no npm code and no Git hooks. Run dependencies only in jobs with a read-only token.
 - Pass inputs through environment variables. Never interpolate input `${{ }}` expressions into `run` text.
 - Never add publication tokens or secrets to the repository or workflows.
 

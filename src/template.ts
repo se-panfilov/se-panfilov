@@ -136,12 +136,17 @@ export function encodePath(path: string): string {
 
 const cacheKeyPattern = /^[A-Za-z0-9]{1,64}$/;
 
+/** Stop when the cache key is not 1 to 64 ASCII letters or digits, so that it is safe in an HTML attribute. */
+export function assertCacheKey(cacheKey: string): void {
+  if (!cacheKeyPattern.test(cacheKey)) throw new Error('The cache key must have 1 to 64 ASCII letters or digits.');
+}
+
 /**
  * Make the `<img>` element. The cache key goes into the query string, so that browsers and the GitHub image proxy
  * load the image again after each run.
  */
 export function renderImage(card: Card, cacheKey: string): string {
-  if (!cacheKeyPattern.test(cacheKey)) throw new Error('The cache key must have 1 to 64 ASCII letters or digits.');
+  assertCacheKey(cacheKey);
   return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}">`;
 }
 

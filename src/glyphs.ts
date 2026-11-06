@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { limits, systemVariant } from '@tarot/config';
 import { GeneratorError } from '@tarot/errors';
 import { type RandomIndex, secureRandomIndex } from '@tarot/pick';
-import { encodePath, escapeHtml, type KeyPlaceholder } from '@tarot/template';
+import { assertCacheKey, encodePath, escapeHtml, type KeyPlaceholder } from '@tarot/template';
 
 /** The file names of the special symbols. A letter uses its lowercase form, and a digit uses itself. */
 export const symbolFileNames: Readonly<Record<string, string>> = { '!': 'excl', '?': 'question', '#': 'hash', '@': 'at', '.': 'dot', ',': 'comma' };
@@ -75,6 +75,7 @@ function shuffle<T>(items: readonly T[], random: RandomIndex): T[] {
  * Then a new random order starts. It does not start with the variant that was used last.
  */
 export function createKeyRenderer(glyphs: Glyphs, cacheKey: string, random: RandomIndex = secureRandomIndex, systemGlyphs: Glyphs = new Map()): (key: KeyPlaceholder) => string {
+  assertCacheKey(cacheKey);
   const queues = new Map<string, string[]>();
   const last = new Map<string, string>();
   // GitHub puts each image into a link to the image file, but not an image in a <picture> element.

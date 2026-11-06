@@ -67,6 +67,10 @@ describe('createKeyRenderer', () => {
     expect(one).not.toBe(two);
   });
 
+  it('rejects a cache key that is not alphanumeric', () => {
+    for (const key of ['', 'a"b', 'a b', 'x'.repeat(65)]) expect(() => createKeyRenderer(glyphs, key)).toThrow(/cache key/);
+  });
+
   it('rejects a symbol without an image', () => {
     const render = createKeyRenderer(glyphs, 'k', fixedIndex(0));
     expect(() => render({ symbol: 'z', size: 1 })).toThrow(/No image for the symbol "z"/);
