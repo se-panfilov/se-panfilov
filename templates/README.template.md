@@ -31,6 +31,7 @@
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Wanna know what happens n̴e̷x̸t? Of course you do! Here, take a peek!
 
 > **<!-- tarot:name -->**
+>
 > <!-- tarot:text -->
 
 <p> <!-- tarot:image --> </p>
