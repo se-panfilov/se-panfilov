@@ -12,12 +12,6 @@
   <!-- tarot:image -->
 </p>
 
-## Reading for <!-- tarot:date -->
-
-<p align="center">
-  <!-- tarot:image -->
-</p>
-
 ### <!-- tarot:name -->
 
 > <!-- tarot:text -->
