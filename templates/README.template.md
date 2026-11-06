@@ -1,3 +1,7 @@
+<p align="center">
+  <!-- tarot:image -->
+</p>
+
 **[00:00:01]** Establishing connection…
 
 **[00:00:02]** ERROR: Connection refused.
@@ -24,9 +28,7 @@
 
 **[00:00:12]** Your forecast for today is: <!-- tarot:name -->.
 
-<p align="center">
-  <!-- tarot:image -->
-</p>
+
 
 ### <!-- tarot:name -->
 
