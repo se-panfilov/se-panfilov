@@ -18,7 +18,7 @@ $ _
 
 ---
 
-## Reading for <!-- tarot:date -->
+[00:00:09] Reading for <!-- tarot:date -->
 
 <p align="center">
   <!-- tarot:image -->
