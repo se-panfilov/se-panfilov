@@ -18,7 +18,7 @@
 
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** Too busy to play with you, choom. Capri, have some fun with our guest.
 <br/><br/>
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I <!-- tarot:key:b:22 --><!-- tarot:key:r2:22 --><!-- tarot:key:e:22 --><!-- tarot:key:a:22 --><!-- tarot:key:k:22 --> something? Pretty please?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I <!-- tarot:key:b:22 --><!-- tarot:key:r:22 --><!-- tarot:key:e:22 --><!-- tarot:key:a:22 --><!-- tarot:key:k:22 --> something? Pretty please?
 <br/><br/>
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** Just show 'em what the future holds. I've got work to do.
 <br/><br/>
@@ -36,7 +36,7 @@
 
 <p> <!-- tarot:image --> </p>
 
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, <!-- tarot:key:c:24 --><!-- tarot:key:h:21 --><!-- tarot:key:o1:24 --><!-- tarot:key:o3:22 --><!-- tarot:key:m:23 --><!-- tarot:key:excl:18 --> You're gonna need it!
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, <!-- tarot:key:c:24 --><!-- tarot:key:h:21 --><!-- tarot:key:o:24 --><!-- tarot:key:o:22 --><!-- tarot:key:m:23 --><!-- tarot:key:!:18 --> You're gonna need it!
 <br/><br/>
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** ...Capri. What the hell did you do this time?
 <br/><br/>
@@ -60,6 +60,6 @@ CD PROJEKT, Cyberpunk, and Cyberpunk 2077 are registered trademarks of CD PROJEK
 
 ---
 
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** <!-- tarot:key:b:26 --><!-- tarot:key:o1:24 --><!-- tarot:key:o2:28 --><!-- tarot:key:o3:23 --><!-- tarot:key:o4:29 --><!-- tarot:key:r1:23 --><!-- tarot:key:i:14 --><!-- tarot:key:n:27 --><!-- tarot:key:g:29 --><!-- tarot:key:excl:20 --> Can we blow something up now?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** <!-- tarot:key:b:26 --><!-- tarot:key:o:24 --><!-- tarot:key:o:28 --><!-- tarot:key:o:23 --><!-- tarot:key:o:29 --><!-- tarot:key:r:23 --><!-- tarot:key:i:14 --><!-- tarot:key:n:27 --><!-- tarot:key:g:29 --><!-- tarot:key:!:20 --> Can we blow something up now?
 
 **[00:01:52]** ERROR: Session terminated by remote host.
