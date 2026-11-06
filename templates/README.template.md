@@ -1,4 +1,4 @@
-## Network Tr̷a̴n̸s̵m̴i̷s̸s̴i̶o̸n̷ Log [**<!-- tarot:date -->**]
+## N̴etwork Tr̷a̴n̸s̵m̴i̷s̸s̴i̶o̸n L̸o̷g̴  [**<!-- tarot:date -->**]
 
 **[00:00:01]** Establishing connection…
 
