@@ -52,7 +52,7 @@
 
 This is an unofficial fan work and is not affiliated with, approved by, or endorsed by CD PROJEKT RED.
 
-The tarot card images and card texts in [`assets/`](assets) come from _Cyberpunk 2077_. They are © CD PROJEKT S.A. All rights reserved.
+The characters, tarot card images and card texts in [`assets/`](assets) come from _Cyberpunk 2077_. They are © CD PROJEKT S.A. All rights reserved.
 
 They are used here in a non-commercial fan project under the [CD PROJEKT RED Fan Content Guidelines](https://www.cdprojektred.com/en/fan-content). They are not covered by the MIT license of this repository. See [NOTICE.md](NOTICE.md).
 
