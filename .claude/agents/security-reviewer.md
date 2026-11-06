@@ -25,8 +25,8 @@ You did not write the change. Examine it as an independent reviewer.
 2. Read `src/`, the template, and the workflows in `.github/workflows/`.
 3. Read the full changed functions, not only the diff lines. Include error paths, cleanup, and the callers.
 4. Trace each input to each file write, subprocess call, network call, and terminal output.
-5. Examine each boundary: card files, template, generated `README.md`, file system, workflow token, Git push, dependencies, and terminal output.
-6. For dependency changes, examine the lockfile diff. Do not run `npm audit` yourself, because they use the network. Recommend a dependency audit to the caller when it is necessary.
+5. Examine each boundary: card files, symbol images, template, generated `README.md`, file system, workflow token, Git push, dependencies, and terminal output.
+6. Use the installed `differential-review`, `sharp-edges`, and `gha-security-review` skills when they apply. For dependency changes, examine the lockfile diff. Do not run `npm audit` or `supply-chain-risk-auditor` yourself, because they use the network. Recommend a dependency audit to the caller when it is necessary.
 7. Check that runtime validation of untrusted data stays in place. Static types do not prove that a value is valid at run time.
 8. Check that the workflow token has only the necessary permissions and that only `README.md` is committed by the daily workflow.
 9. Check that tests cover each fixed defect. Look for removed or weakened tests.

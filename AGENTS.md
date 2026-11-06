@@ -70,6 +70,30 @@ If unclear, keep the safer state and ask.
 - Inject the random source and the time, so that tests stay deterministic. Production uses `node:crypto` randomness.
 - Do not add network access to the generator.
 
+### Placeholders
+
+Each placeholder has two forms: `<!-- tarot:name -->` and `{{tarot:name}}`. Use the second form inside HTML attributes.
+
+| Placeholder                      | Result                                                                                          |
+| -------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `<!-- tarot:image -->`           | The card image. Exactly one.                                                                    |
+| `<!-- tarot:text -->`            | The card text. Exactly one.                                                                     |
+| `<!-- tarot:name -->`            | The card name.                                                                                  |
+| `<!-- tarot:date -->`            | The reading date, for example `6 November 2026`.                                                |
+| `<!-- tarot:cacheKey -->`        | The cache key of the run. Use it in other image links: `images/capri.png?v={{tarot:cacheKey}}`. |
+| `<!-- tarot:key:SYMBOL:SIZE -->` | One symbol image, for example `<!-- tarot:key:a:24 -->`.                                        |
+| `<!-- tarot:date:STYLE:SIZE -->` | The date as symbol images, for example `<!-- tarot:date:capri:18 -->`.                          |
+
+### Symbol images
+
+- Symbol images are SVG files in `images/`: `a_1.svg` to `a_4.svg` for the random variants, `a_5.svg` for the `system` style, or one `a.svg`.
+- Letters use the lowercase file name. Digits use the digit. The symbols `! ? # @ . ,` use `excl`, `question`, `hash`, `at`, `dot`, and `comma`.
+- The generator selects a random variant for each symbol image. The same symbol does not repeat a variant until it has used all variants.
+- The `system` date style always uses variant 5. Other style names are labels only.
+- A missing symbol image stops the run before `README.md` changes.
+- Each symbol image is in a `<picture>` element, so that GitHub does not put it into a link. Only the card image is a link.
+- Each generated image link has the cache key of the run (`?v=`), so that GitHub loads the images again after each run.
+
 ## Implementation
 
 - Develop in TypeScript for Node.js and compile before execution. Use Vite with a separate `tsc --noEmit` check.
@@ -96,7 +120,7 @@ If unclear, keep the safer state and ask.
 ## Security requirements
 
 - Design controls before implementation. Identify inputs, protected data, writes, and external effects.
-- Audit after each stage without a separate request. Perform a separate review after implementation, for example with the [security-reviewer](.claude/agents/security-reviewer.md) subagent. Fix confirmed defects and verify each fix, subject to Human decisions.
+- Audit after each stage without a separate request. Perform a separate review after implementation, for example with the [security-reviewer](.claude/agents/security-reviewer.md) subagent or the `find-bugs` and `differential-review` skills. Fix confirmed defects and verify each fix, subject to Human decisions.
 - Use subprocess argument arrays. Never interpolate user data into shell commands.
 - Validate inputs before writes. Reject ambiguous or unsupported states rather than guessing.
 - Before file creation, examine existing paths, symbolic links, permissions, and overwrite behavior.
@@ -121,6 +145,14 @@ If unclear, keep the safer state and ask.
 - Only the Daily README workflow has `contents: write`. It commits only `README.md`.
 - Pass inputs through environment variables. Never interpolate input `${{ }}` expressions into `run` text.
 - Never add publication tokens or secrets to the repository or workflows.
+
+## AI agents and skills
+
+- [The agent setup guide](.agents/README.md) lists the supported hosts, the installed skills, their local adaptations, and their limits.
+- Skills are in `.agents/skills/`. Claude Code finds them through the links in `.claude/skills/`.
+- A skill gives no additional permission. These rules have priority over a skill.
+- Do not add, remove, or update skills, or change `skills-lock.json`, without a human decision.
+- Do not run `second-opinion` or the `supply-chain-risk-auditor` collector without an explicit request in the current task. They send data over the network.
 
 ## Documentation
 
