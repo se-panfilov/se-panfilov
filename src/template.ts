@@ -147,15 +147,9 @@ export function renderImage(card: Card, cacheKey: string): string {
   return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="100px">`;
 }
 
-/** Make symbol images for each letter and digit of a text. Spaces become a wide gap. Other characters are kept as escaped text. */
-// The gap between words. One normal space between symbol images is too narrow to see.
-export const wordGap = '&emsp;';
-
+/** Make symbol images for each letter and digit of a text. Spaces stay. Other characters are kept as escaped text. */
 export function renderSymbols(text: string, size: number, renderKey: (key: KeyPlaceholder) => string, system = false): string {
-  return text.replace(/[A-Za-z0-9]|[^A-Za-z0-9]+/g, (part) => {
-    if (/^[A-Za-z0-9]$/.test(part)) return renderKey({ symbol: part, size, system });
-    return /^\s+$/.test(part) ? wordGap : escapeHtml(part);
-  });
+  return text.replace(/[A-Za-z0-9]|[^A-Za-z0-9]+/g, (part) => (/^[A-Za-z0-9]$/.test(part) ? renderKey({ symbol: part, size, system }) : escapeHtml(part)));
 }
 
 export type RenderValues = {

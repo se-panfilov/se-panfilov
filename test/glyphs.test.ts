@@ -136,10 +136,10 @@ describe('date placeholder with symbol images', () => {
     expect(templateProblems(`${base}<!-- tarot:date:Capri:24 -->`)).toEqual([expect.stringContaining('is not valid')]);
   });
 
-  it('makes an image for each letter and digit and a wide gap for each space', () => {
+  it('makes an image for each letter and digit and keeps the spaces', () => {
     const glyphSet: Glyphs = new Map(alphabet.map((name) => [name, [`images/${name}.svg`]]));
     expect(renderSymbols('5 Nov', 24, createKeyRenderer(glyphSet, 'k', fixedIndex(0)))).toBe(
-      '<img src="images/5.svg?v=k" width="24" alt="5">&emsp;<img src="images/n.svg?v=k" width="24" alt="N"><img src="images/o.svg?v=k" width="24" alt="o"><img src="images/v.svg?v=k" width="24" alt="v">'
+      '<img src="images/5.svg?v=k" width="24" alt="5"> <img src="images/n.svg?v=k" width="24" alt="N"><img src="images/o.svg?v=k" width="24" alt="o"><img src="images/v.svg?v=k" width="24" alt="v">'
     );
   });
 
@@ -147,7 +147,7 @@ describe('date placeholder with symbol images', () => {
     const files: Record<string, string> = { 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:date:capri:24 -->\n' };
     for (const name of alphabet) files[`images/${name}.svg`] = '';
     const { content } = generateReadme({ root: makeDefaultRepository(files), random: fixedIndex(0), cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
-    const expected = (('6 November 2026'.match(/./g) ?? []) as string[]).map((c) => (c === ' ' ? '&emsp;' : `<img src="images/${c.toLowerCase()}.svg?v=k" width="24" alt="${c}">`)).join('');
+    const expected = (('6 November 2026'.match(/./g) ?? []) as string[]).map((c) => (c === ' ' ? ' ' : `<img src="images/${c.toLowerCase()}.svg?v=k" width="24" alt="${c}">`)).join('');
     expect(content).toContain(`\n${expected}\n`);
   });
 
