@@ -159,4 +159,28 @@ describe('date placeholder with symbol images', () => {
     expect(eImages).toHaveLength(2);
     expect(new Set(eImages).size).toBe(2);
   });
+
+  it('uses variant 5 for the system style and never for random variants', () => {
+    const files: Record<string, string> = { 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:date:system:20 -->\n{{tarot:date:capri:24}}\n' };
+    for (const name of alphabet) for (const variant of [1, 2, 3, 4, 5]) files[`images/${name}_${variant}.svg`] = '';
+    for (let seed = 0; seed < 5; seed += 1) {
+      const { content } = generateReadme({ root: makeDefaultRepository(files), random: (max) => (seed + max) % max, cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
+      const [system = '', capri = ''] = content.split('\n').filter((line) => line.includes('images/'));
+      expect(system).toContain('<img src="images/6_5.svg?v=k" width="20" alt="6"> <img src="images/n_5.svg?v=k" width="20" alt="N">');
+      expect(system.match(/images\/[a-z0-9]+_[1-4]\.svg/)).toBeNull();
+      expect(capri.match(/images\/[a-z0-9]+_5\.svg/)).toBeNull();
+    }
+  });
+
+  it('rejects the system style when a variant 5 image is missing', () => {
+    const files: Record<string, string> = { 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:date:system:20 -->\n' };
+    for (const name of alphabet) files[`images/${name}_1.svg`] = '';
+    expect(() => generateReadme({ root: makeDefaultRepository(files), random: fixedIndex(0) })).toThrow(/_5\.svg/);
+  });
+
+  it('loads only one variant when asked', () => {
+    const root = makeRepository({ 'images/a_1.svg': '', 'images/a_5.svg': '', 'images/b.svg': '' });
+    expect(loadGlyphs(root, 'images', 5)).toEqual(new Map([['a', ['images/a_5.svg']]]));
+    expect(loadGlyphs(root, 'images').get('a')).toEqual(['images/a_1.svg']);
+  });
 });

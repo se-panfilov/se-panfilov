@@ -23,5 +23,8 @@ export const limits = {
   imageEntries: 10000
 } as const;
 
+/** The symbol image variant of the `system` style, for example `a_5.svg`. Random variants do not use it. */
+export const systemVariant = 5;
+
 /** The display width of the card image in pixels. */
 export const imageWidth = 300;

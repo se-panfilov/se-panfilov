@@ -11,7 +11,8 @@ import { GeneratorError } from '@tarot/errors';
  * `<img src="images/capri.png?v={{tarot:cacheKey}}" alt="Capri">`.
  * `<!-- tarot:key:SYMBOL:SIZE -->` gives the image of one symbol, for example `<!-- tarot:key:a:24 -->`. See `@tarot/glyphs`.
  * `<!-- tarot:date:STYLE:SIZE -->` gives the date as symbol images, for example `<!-- tarot:date:capri:24 -->`.
- * STYLE is a label only. The images always come from `images/`.
+ * The images always come from `images/`. STYLE is a label only, but the `system` style always uses variant 5
+ * (`a_5.svg`) instead of a random variant.
  */
 export const placeholders = ['image', 'text', 'name', 'date', 'cacheKey'] as const;
 export type Placeholder = (typeof placeholders)[number];
@@ -32,7 +33,15 @@ const placeholderPattern = /<!--\s*tarot:([A-Za-z0-9_:!?#@.,-]*)\s*-->|\{\{\s*ta
 const keyPattern = /^key:([A-Za-z0-9!?#@.,]):([1-9]\d{0,3})$/;
 const maxKeySize = 1000;
 
-export type KeyPlaceholder = { readonly symbol: string; readonly size: number };
+export type KeyPlaceholder = {
+  readonly symbol: string;
+  readonly size: number;
+  /** Use the fixed variant of the `system` style instead of a random variant. */
+  readonly system?: boolean | undefined;
+};
+
+/** The date style that uses the fixed variant. */
+export const systemStyle = 'system';
 
 /** A date placeholder with symbol images: `date`, the style, and the image width in pixels. */
 const styledDatePattern = /^date:([a-z0-9][a-z0-9_-]{0,31}):([1-9]\d{0,3})$/;
@@ -139,8 +148,8 @@ export function renderImage(card: Card, cacheKey: string): string {
 }
 
 /** Make symbol images for each letter and digit of a text. Spaces stay. Other characters are kept as escaped text. */
-export function renderSymbols(text: string, size: number, renderKey: (key: KeyPlaceholder) => string): string {
-  return text.replace(/[A-Za-z0-9]|[^A-Za-z0-9]+/g, (part) => (/^[A-Za-z0-9]$/.test(part) ? renderKey({ symbol: part, size }) : escapeHtml(part)));
+export function renderSymbols(text: string, size: number, renderKey: (key: KeyPlaceholder) => string, system = false): string {
+  return text.replace(/[A-Za-z0-9]|[^A-Za-z0-9]+/g, (part) => (/^[A-Za-z0-9]$/.test(part) ? renderKey({ symbol: part, size, system }) : escapeHtml(part)));
 }
 
 export type RenderValues = {
@@ -168,6 +177,7 @@ export function renderTemplate(template: string, card: Card, { date, cacheKey, r
     if (!key && !styledDate) return '';
     if (!renderKey) throw new GeneratorError('The template has symbol placeholders, but no symbol images are available.');
     if (key) return renderKey(key);
-    return renderSymbols(date, (styledDate as StyledDatePlaceholder).size, renderKey);
+    const { size, style } = styledDate as StyledDatePlaceholder;
+    return renderSymbols(date, size, renderKey, style === systemStyle);
   });
 }
