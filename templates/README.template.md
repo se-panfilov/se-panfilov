@@ -30,7 +30,7 @@
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Wanna know what happens n̴e̷x̸t? Of course you do! Here, take a peek!
 
-<p align="right">
+<p>
   <!-- tarot:image -->
 </p>
 

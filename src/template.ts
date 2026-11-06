@@ -69,7 +69,7 @@ const cacheKeyPattern = /^[A-Za-z0-9]{1,64}$/;
  */
 export function renderImage(card: Card, cacheKey: string): string {
   if (!cacheKeyPattern.test(cacheKey)) throw new Error('The cache key must have 1 to 64 ASCII letters or digits.');
-  return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="${imageWidth}" align="right">`;
+  return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="${imageWidth}">`;
 }
 
 export type RenderValues = {
