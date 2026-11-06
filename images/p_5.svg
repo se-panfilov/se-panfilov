@@ -1,37 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="88" height="108" viewBox="0 0 88 108" role="img" aria-label="Cyberpunk glitch glyph P">
-<title>Cyberpunk glyph: P</title>
-<defs>
-  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#8febf4" opacity=".10" stroke-width=".45"/></pattern>
-  <pattern id="noise" width="14" height="16" patternUnits="userSpaceOnUse"><path d="M2 5h3m7 7h-2" stroke="#36adbb" opacity=".17" stroke-width=".75"/></pattern>
-  <clipPath id="clip"><path d="M7 1H81L87 8V94L79 106H8L1 99V10Z"/></clipPath>
-  <clipPath id="gclip"><g transform="matrix(0.04622 0 0 -0.04622 12.4578 91.5000)"><path d="M301 1493H876Q1087 1493 1206.5 1385.5Q1326 1278 1326 1087Q1326 970 1286.0 864.5Q1246 759 1173 680Q1093 595 982.0 556.5Q871 518 704 518H475L385 0H39ZM599 1214 526 797H717Q840 797 904.5 861.0Q969 925 969 1047Q969 1128 923.0 1171.0Q877 1214 789 1214Z"/></g></clipPath>
-</defs>
-<!-- Black backed tile, cut corners, angular UI framing -->
-<path d="M7 1H81L87 8V94L79 106H8L1 99V10Z" fill="#070f14"/>
-<g clip-path="url(#clip)">
- <rect width="88" height="108" fill="url(#noise)"/>
- <path d="M0 17h88M0 87h88" stroke="#15323a" stroke-width=".8"/>
- <path d="M5 26l25-17h35l-23 17ZM62 82l20-10v22l-20 10Z" fill="#132a32" opacity=".45"/>
- <path d="M0 49h88M0 52h88" stroke="#17353b" opacity=".35"/>
- <g transform="matrix(0.04622 0 0 -0.04622 12.4578 91.5000)"><path d="M301 1493H876Q1087 1493 1206.5 1385.5Q1326 1278 1326 1087Q1326 970 1286.0 864.5Q1246 759 1173 680Q1093 595 982.0 556.5Q871 518 704 518H475L385 0H39ZM599 1214 526 797H717Q840 797 904.5 861.0Q969 925 969 1047Q969 1128 923.0 1171.0Q877 1214 789 1214Z" fill="#f7e900"/></g>
- <!-- thin displaced chromatic slices constrained to the glyph -->
- <g clip-path="url(#gclip)">
-  <rect x="5" y="39" width="78" height="1.5" fill="#0a0d0c" opacity=".85"/>
-  <rect x="8" y="40" width="19" height="2.5" fill="#08e8f0"/>
-  <rect x="36" y="52" width="25" height="2" fill="#ff2ac6"/>
-  <rect x="19" y="58" width="35" height=".9" fill="#121219" opacity=".85"/>
-  <rect x="0" y="23" width="88" height="72" fill="url(#scan)" opacity=".7"/>
- </g>
- <!-- tiny signal fragments near glyph, not obscuring it -->
- <path d="M10 37h12m44 56h16" fill="none" stroke="#00f1f4" stroke-width="1" opacity=".8"/>
- <path d="M15 49h10M59 44h7" stroke="#f527a9" stroke-width="1" opacity=".8"/>
-</g>
-<path d="M7 1H81L87 8V94L79 106H8L1 99V10Z" fill="none" stroke="#e9ed00" stroke-width="1.4"/>
-<path d="M3 10L10 3h17M61 3h18l5 6M3 81v17l7 6h9M65 104h14l6-10" stroke="#fff500" stroke-width="2.2" fill="none"/>
-<path d="M10 13h8m-5 2h8m-5 2h8" stroke="#608f97" stroke-width="1.3"/>
-<path d="M29 13h19l4-4h17" fill="none" stroke="#13edf0" stroke-width=".8"/>
-<path d="M50 16h15l3-3h10" fill="none" stroke="#f52eac" stroke-width=".7"/>
-<path d="M9 93h16m-14 2h20m-21 2h13" stroke="#2a6570" stroke-width=".7"/>
-<path d="M63 94v5m4-5v5m4-5v5m4-5v5m4-5v5" stroke="#eaff00" stroke-width="1"/>
-<path d="M34 101h15l4-3h8" stroke="#11e6ed" stroke-width=".7" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="88" viewBox="0 0 72 88" role="img" aria-label="p">
+ <defs>
+  <path id="glyph" d="M25.862000000000002 58.783V79.762H19.017000000000003V22.560000000000002H25.862000000000002V27.851Q27.564 24.78 30.3945 23.1705Q33.225 21.561 36.925 21.561Q44.436 21.561 48.7095 27.37Q52.983 33.179 52.983 43.465Q52.983 53.566 48.691 59.3195Q44.399 65.073 36.925 65.073Q33.150999999999996 65.073 30.3205 63.463499999999996Q27.490000000000002 61.854 25.862000000000002 58.783ZM45.842 43.317Q45.842 35.399 43.3445 31.366Q40.847 27.333 35.926 27.333Q30.968 27.333 28.415 31.3845Q25.862000000000002 35.436 25.862000000000002 43.317Q25.862000000000002 51.161 28.415 55.231Q30.968 59.301 35.926 59.301Q40.847 59.301 43.3445 55.268Q45.842 51.235 45.842 43.317Z"/>
+  <clipPath id="cutA"><rect x="0" y="46" width="72" height="2.2"/></clipPath>
+  <clipPath id="cutB"><rect x="0" y="50" width="72" height="1.8"/></clipPath>
+  <pattern id="scan" width="72" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H72" stroke="#9bffff" stroke-width=".35" opacity=".045"/></pattern>
+ </defs>
+ <rect width="72" height="88" fill="#192023"/>
+ <rect width="72" height="88" fill="url(#scan)"/>
+ <path d="M0 3.5H72M0 84H72" stroke="#5ca8aa" stroke-width=".6" opacity=".12"/>
+ <use href="#glyph" transform="translate(-.9 .45)" fill="#366974" opacity=".46"/>
+ <use href="#glyph" transform="translate(.65 -.35)" fill="#a5ece4" opacity=".21"/>
+ <use href="#glyph" fill="#85cad0"/>
+ <use href="#glyph" transform="translate(1.1 0)" fill="#b6f3ea" clip-path="url(#cutA)" opacity=".91"/>
+ <use href="#glyph" transform="translate(0.8 0)" fill="#3b8792" clip-path="url(#cutB)" opacity=".86"/>
+ <path d="M9 47.0h5" stroke="#b1e2db" opacity=".4" stroke-width=".7"/>
+ <path d="M53 51.0h7" stroke="#326875" opacity=".4" stroke-width=".8"/>
 </svg>

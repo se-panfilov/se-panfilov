@@ -1,37 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="88" height="108" viewBox="0 0 88 108" role="img" aria-label="Cyberpunk glitch glyph 8">
-<title>Cyberpunk glyph: 8</title>
-<defs>
-  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#8febf4" opacity=".10" stroke-width=".45"/></pattern>
-  <pattern id="noise" width="14" height="16" patternUnits="userSpaceOnUse"><path d="M2 5h3m7 7h-2" stroke="#36adbb" opacity=".17" stroke-width=".75"/></pattern>
-  <clipPath id="clip"><path d="M7 1H81L87 8V94L79 106H8L1 99V10Z"/></clipPath>
-  <clipPath id="gclip"><g transform="matrix(0.04454 0 0 -0.04454 16.0481 90.2082)"><path d="M619 668Q514 668 443.5 588.5Q373 509 373 393Q373 310 418.5 261.5Q464 213 544 213Q651 213 721.0 291.5Q791 370 791 487Q791 570 744.5 619.0Q698 668 619 668ZM398 795Q301 840 252.5 912.0Q204 984 204 1085Q204 1288 354.0 1404.0Q504 1520 769 1520Q981 1520 1098.0 1432.0Q1215 1344 1215 1184Q1215 1042 1133.5 941.0Q1052 840 901 795Q1011 748 1063.0 669.0Q1115 590 1115 469Q1115 239 953.5 105.0Q792 -29 510 -29Q288 -29 164.0 69.5Q40 168 40 344Q40 503 135.0 622.5Q230 742 398 795ZM737 1278Q645 1278 590.0 1218.5Q535 1159 535 1061Q535 993 575.0 951.0Q615 909 680 909Q772 909 827.5 968.5Q883 1028 883 1126Q883 1195 843.0 1236.5Q803 1278 737 1278Z"/></g></clipPath>
-</defs>
-<!-- Black backed tile, cut corners, angular UI framing -->
-<path d="M7 1H81L87 8V94L79 106H8L1 99V10Z" fill="#070f14"/>
-<g clip-path="url(#clip)">
- <rect width="88" height="108" fill="url(#noise)"/>
- <path d="M0 17h88M0 87h88" stroke="#15323a" stroke-width=".8"/>
- <path d="M5 26l25-17h35l-23 17ZM62 82l20-10v22l-20 10Z" fill="#132a32" opacity=".45"/>
- <path d="M0 49h88M0 52h88" stroke="#17353b" opacity=".35"/>
- <g transform="matrix(0.04454 0 0 -0.04454 16.0481 90.2082)"><path d="M619 668Q514 668 443.5 588.5Q373 509 373 393Q373 310 418.5 261.5Q464 213 544 213Q651 213 721.0 291.5Q791 370 791 487Q791 570 744.5 619.0Q698 668 619 668ZM398 795Q301 840 252.5 912.0Q204 984 204 1085Q204 1288 354.0 1404.0Q504 1520 769 1520Q981 1520 1098.0 1432.0Q1215 1344 1215 1184Q1215 1042 1133.5 941.0Q1052 840 901 795Q1011 748 1063.0 669.0Q1115 590 1115 469Q1115 239 953.5 105.0Q792 -29 510 -29Q288 -29 164.0 69.5Q40 168 40 344Q40 503 135.0 622.5Q230 742 398 795ZM737 1278Q645 1278 590.0 1218.5Q535 1159 535 1061Q535 993 575.0 951.0Q615 909 680 909Q772 909 827.5 968.5Q883 1028 883 1126Q883 1195 843.0 1236.5Q803 1278 737 1278Z" fill="#f7e900"/></g>
- <!-- thin displaced chromatic slices constrained to the glyph -->
- <g clip-path="url(#gclip)">
-  <rect x="5" y="52" width="78" height="1.5" fill="#0a0d0c" opacity=".85"/>
-  <rect x="13" y="53" width="13" height="2.5" fill="#08e8f0"/>
-  <rect x="36" y="61" width="44" height="2" fill="#ff2ac6"/>
-  <rect x="20" y="74" width="19" height=".9" fill="#121219" opacity=".85"/>
-  <rect x="0" y="23" width="88" height="72" fill="url(#scan)" opacity=".7"/>
- </g>
- <!-- tiny signal fragments near glyph, not obscuring it -->
- <path d="M8 50h10m44 65h10" fill="none" stroke="#00f1f4" stroke-width="1" opacity=".8"/>
- <path d="M13 58h7M55 57h8" stroke="#f527a9" stroke-width="1" opacity=".8"/>
-</g>
-<path d="M7 1H81L87 8V94L79 106H8L1 99V10Z" fill="none" stroke="#e9ed00" stroke-width="1.4"/>
-<path d="M3 10L10 3h17M61 3h18l5 6M3 81v17l7 6h9M65 104h14l6-10" stroke="#fff500" stroke-width="2.2" fill="none"/>
-<path d="M10 13h8m-5 2h8m-5 2h8" stroke="#608f97" stroke-width="1.3"/>
-<path d="M29 13h19l4-4h17" fill="none" stroke="#13edf0" stroke-width=".8"/>
-<path d="M50 16h15l3-3h10" fill="none" stroke="#f52eac" stroke-width=".7"/>
-<path d="M9 93h16m-14 2h20m-21 2h13" stroke="#2a6570" stroke-width=".7"/>
-<path d="M63 94v5m4-5v5m4-5v5m4-5v5m4-5v5" stroke="#eaff00" stroke-width="1"/>
-<path d="M34 101h15l4-3h8" stroke="#11e6ed" stroke-width=".7" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="88" viewBox="0 0 72 88" role="img" aria-label="8">
+ <defs>
+  <path id="glyph" d="M35.9815 37.767Q30.986500000000003 37.767 28.267000000000003 40.560500000000005Q25.5475 43.354 25.5475 48.46Q25.5475 53.566 28.304000000000002 56.3965Q31.0605 59.227000000000004 35.9815 59.227000000000004Q41.0135 59.227000000000004 43.733000000000004 56.4335Q46.4525 53.64 46.4525 48.46Q46.4525 43.391000000000005 43.696 40.57900000000001Q40.9395 37.767 35.9815 37.767ZM29.4695 34.659000000000006Q24.6965 33.438 22.014000000000003 30.108Q19.331500000000002 26.778 19.331500000000002 22.079Q19.331500000000002 15.493000000000002 23.808500000000002 11.626500000000004Q28.285500000000003 7.760000000000005 35.9815 7.760000000000005Q43.7145 7.760000000000005 48.191500000000005 11.626500000000004Q52.6685 15.493000000000002 52.6685 22.079Q52.6685 26.778 49.986000000000004 30.108Q47.3035 33.438 42.5305 34.659000000000006Q48.0805 35.88 51.022000000000006 39.58Q53.9635 43.28 53.9635 49.163Q53.9635 56.637 49.1905 60.855Q44.417500000000004 65.073 35.9815 65.073Q27.545500000000004 65.073 22.791000000000004 60.87349999999999Q18.036500000000004 56.674 18.036500000000004 49.237Q18.036500000000004 43.317 20.978 39.5985Q23.9195 35.88 29.4695 34.659000000000006ZM26.768500000000003 22.782000000000004Q26.768500000000003 27.222 29.1365 29.553Q31.5045 31.884 35.9815 31.884Q40.4955 31.884 42.8635 29.553Q45.231500000000004 27.222 45.231500000000004 22.782000000000004Q45.231500000000004 18.268 42.882000000000005 15.900000000000002Q40.5325 13.532000000000004 35.9815 13.532000000000004Q31.5045 13.532000000000004 29.1365 15.918500000000002Q26.768500000000003 18.305 26.768500000000003 22.782000000000004Z"/>
+  <clipPath id="cutA"><rect x="0" y="27" width="72" height="2.2"/></clipPath>
+  <clipPath id="cutB"><rect x="0" y="59" width="72" height="1.8"/></clipPath>
+  <pattern id="scan" width="72" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H72" stroke="#9bffff" stroke-width=".35" opacity=".045"/></pattern>
+ </defs>
+ <rect width="72" height="88" fill="#192023"/>
+ <rect width="72" height="88" fill="url(#scan)"/>
+ <path d="M0 3.5H72M0 84H72" stroke="#5ca8aa" stroke-width=".6" opacity=".12"/>
+ <use href="#glyph" transform="translate(-.9 .45)" fill="#366974" opacity=".46"/>
+ <use href="#glyph" transform="translate(.65 -.35)" fill="#a5ece4" opacity=".21"/>
+ <use href="#glyph" fill="#85cad0"/>
+ <use href="#glyph" transform="translate(0.9 0)" fill="#b6f3ea" clip-path="url(#cutA)" opacity=".91"/>
+ <use href="#glyph" transform="translate(1.0 0)" fill="#3b8792" clip-path="url(#cutB)" opacity=".86"/>
+ <path d="M15 28.0h6" stroke="#b1e2db" opacity=".4" stroke-width=".7"/>
+ <path d="M49 60.0h3" stroke="#326875" opacity=".4" stroke-width=".8"/>
 </svg>
