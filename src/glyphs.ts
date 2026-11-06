@@ -1,7 +1,7 @@
 import { type Dirent, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { limits } from '@tarot/config';
+import { limits, systemVariant } from '@tarot/config';
 import { GeneratorError } from '@tarot/errors';
 import { type RandomIndex, secureRandomIndex } from '@tarot/pick';
 import { encodePath, escapeHtml, type KeyPlaceholder } from '@tarot/template';
@@ -21,8 +21,12 @@ export type Glyphs = ReadonlyMap<string, readonly string[]>;
 // `a_1.svg` is variant 1 of `a`. `a.svg` is the only image of `a`, when `a` has no numbered variants.
 const glyphFilePattern = /^([a-z0-9]+)(?:_([1-9]\d?))?\.svg$/;
 
-/** Find the symbol images in a directory. Links, subdirectories, and other files are skipped. */
-export function loadGlyphs(root: string, imagesDir: string): Glyphs {
+/**
+ * Find the symbol images in a directory. Links, subdirectories, and other files are skipped.
+ * Without `variant`, the result has the random variants: all numbered variants except the `system` variant.
+ * With `variant`, the result has only the files of this variant, for example `a_5.svg`.
+ */
+export function loadGlyphs(root: string, imagesDir: string, variant?: number): Glyphs {
   let items: Dirent[];
   try {
     items = readdirSync(join(root, imagesDir), { withFileTypes: true });
@@ -37,8 +41,12 @@ export function loadGlyphs(root: string, imagesDir: string): Glyphs {
     const match = item.isFile() ? glyphFilePattern.exec(item.name) : null;
     if (!match?.[1]) continue;
     const path = `${imagesDir}/${item.name}`;
+    if (variant !== undefined) {
+      if (match[2] !== undefined && Number(match[2]) === variant) single.set(match[1], path);
+      continue;
+    }
     if (match[2] === undefined) single.set(match[1], path);
-    else numbered.set(match[1], [...(numbered.get(match[1]) ?? []), { variant: Number(match[2]), path }]);
+    else if (Number(match[2]) !== systemVariant) numbered.set(match[1], [...(numbered.get(match[1]) ?? []), { variant: Number(match[2]), path }]);
   }
   const glyphs = new Map<string, readonly string[]>();
   for (const [name, path] of single) glyphs.set(name, [path]);
@@ -66,11 +74,17 @@ function shuffle<T>(items: readonly T[], random: RandomIndex): T[] {
  * order, so that the same symbol shows a different variant each time until all variants are used.
  * Then a new random order starts. It does not start with the variant that was used last.
  */
-export function createKeyRenderer(glyphs: Glyphs, cacheKey: string, random: RandomIndex = secureRandomIndex): (key: KeyPlaceholder) => string {
+export function createKeyRenderer(glyphs: Glyphs, cacheKey: string, random: RandomIndex = secureRandomIndex, systemGlyphs: Glyphs = new Map()): (key: KeyPlaceholder) => string {
   const queues = new Map<string, string[]>();
   const last = new Map<string, string>();
-  return ({ symbol, size }) => {
+  const image = (path: string, size: number, symbol: string): string => `<img src="${escapeHtml(encodePath(path))}?v=${cacheKey}" width="${size}" alt="${escapeHtml(symbol)}">`;
+  return ({ symbol, size, system }) => {
     const name = symbolFileName(symbol);
+    if (system) {
+      const path = name === undefined ? undefined : systemGlyphs.get(name)?.[0];
+      if (path === undefined) throw new GeneratorError(`No system image for the symbol "${symbol}". Add ${name ?? symbol}_${systemVariant}.svg to the symbol image directory.`);
+      return image(path, size, symbol);
+    }
     const variants = name === undefined ? undefined : glyphs.get(name);
     if (name === undefined || !variants?.length) throw new GeneratorError(`No image for the symbol "${symbol}". Add ${name ?? symbol}_1.svg or ${name ?? symbol}.svg to the symbol image directory.`);
     const queueKey = name;
@@ -83,6 +97,6 @@ export function createKeyRenderer(glyphs: Glyphs, cacheKey: string, random: Rand
     }
     const path = queue.shift() as string;
     last.set(queueKey, path);
-    return `<img src="${escapeHtml(encodePath(path))}?v=${cacheKey}" width="${size}" alt="${escapeHtml(symbol)}">`;
+    return image(path, size, symbol);
   };
 }
