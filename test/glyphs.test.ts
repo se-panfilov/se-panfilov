@@ -46,9 +46,9 @@ describe('symbol placeholders', () => {
 describe('createKeyRenderer', () => {
   it('makes an image with the size, the cache key, and the symbol as alt text', () => {
     const render = createKeyRenderer(glyphs, 'abc123', fixedIndex(0));
-    expect(render({ symbol: 'b', size: 24 })).toBe('<a><img src="images/b.svg?v=abc123" width="24" alt="b"></a>');
-    expect(render({ symbol: '!', size: 30 })).toMatch(/^<a><img src="images\/excl_[12]\.svg\?v=abc123" width="30" alt="!"><\/a>$/);
-    expect(render({ symbol: 'A', size: 5 })).toMatch(/^<a><img src="images\/a_[1-4]\.svg\?v=abc123" width="5" alt="A"><\/a>$/);
+    expect(render({ symbol: 'b', size: 24 })).toBe('<picture><img src="images/b.svg?v=abc123" width="24" alt="b"></picture>');
+    expect(render({ symbol: '!', size: 30 })).toMatch(/^<picture><img src="images\/excl_[12]\.svg\?v=abc123" width="30" alt="!"><\/picture>$/);
+    expect(render({ symbol: 'A', size: 5 })).toMatch(/^<picture><img src="images\/a_[1-4]\.svg\?v=abc123" width="5" alt="A"><\/picture>$/);
   });
 
   it('uses each variant once before it uses a variant again', () => {
@@ -108,10 +108,10 @@ describe('generateReadme with symbol placeholders', () => {
       'images/excl_1.svg': ''
     });
     const { content } = generateReadme({ root, random: fixedIndex(0), cacheKey: 'abc123' });
-    const images = content.match(/<a><img src="images\/[^"]+" width="\d+" alt="[^"]+"><\/a>/g) ?? [];
+    const images = content.match(/<picture><img src="images\/[^"]+" width="\d+" alt="[^"]+"><\/picture>/g) ?? [];
     expect(images).toHaveLength(3);
     expect(new Set(images.slice(0, 2)).size).toBe(2);
-    expect(images[2]).toBe('<a><img src="images/excl_1.svg?v=abc123" width="22" alt="!"></a>');
+    expect(images[2]).toBe('<picture><img src="images/excl_1.svg?v=abc123" width="22" alt="!"></picture>');
     expect(content).not.toContain('tarot:key');
   });
 
@@ -139,7 +139,7 @@ describe('date placeholder with symbol images', () => {
   it('makes an image for each letter and digit and keeps the spaces', () => {
     const glyphSet: Glyphs = new Map(alphabet.map((name) => [name, [`images/${name}.svg`]]));
     expect(renderSymbols('5 Nov', 24, createKeyRenderer(glyphSet, 'k', fixedIndex(0)))).toBe(
-      '<a><img src="images/5.svg?v=k" width="24" alt="5"></a> <a><img src="images/n.svg?v=k" width="24" alt="N"></a><a><img src="images/o.svg?v=k" width="24" alt="o"></a><a><img src="images/v.svg?v=k" width="24" alt="v"></a>'
+      '<picture><img src="images/5.svg?v=k" width="24" alt="5"></picture> <picture><img src="images/n.svg?v=k" width="24" alt="N"></picture><picture><img src="images/o.svg?v=k" width="24" alt="o"></picture><picture><img src="images/v.svg?v=k" width="24" alt="v"></picture>'
     );
   });
 
@@ -147,7 +147,9 @@ describe('date placeholder with symbol images', () => {
     const files: Record<string, string> = { 'templates/README.template.md': '<!-- tarot:image -->\n<!-- tarot:text -->\n<!-- tarot:date:capri:24 -->\n' };
     for (const name of alphabet) files[`images/${name}.svg`] = '';
     const { content } = generateReadme({ root: makeDefaultRepository(files), random: fixedIndex(0), cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
-    const expected = (('6 November 2026'.match(/./g) ?? []) as string[]).map((c) => (c === ' ' ? ' ' : `<a><img src="images/${c.toLowerCase()}.svg?v=k" width="24" alt="${c}"></a>`)).join('');
+    const expected = (('6 November 2026'.match(/./g) ?? []) as string[])
+      .map((c) => (c === ' ' ? ' ' : `<picture><img src="images/${c.toLowerCase()}.svg?v=k" width="24" alt="${c}"></picture>`))
+      .join('');
     expect(content).toContain(`\n${expected}\n`);
   });
 
@@ -166,7 +168,7 @@ describe('date placeholder with symbol images', () => {
     for (let seed = 0; seed < 5; seed += 1) {
       const { content } = generateReadme({ root: makeDefaultRepository(files), random: (max) => (seed + max) % max, cacheKey: 'k', now: new Date('2026-11-06T12:00:00Z') });
       const [system = '', capri = ''] = content.split('\n').filter((line) => line.includes('images/'));
-      expect(system).toContain('<a><img src="images/6_5.svg?v=k" width="20" alt="6"></a> <a><img src="images/n_5.svg?v=k" width="20" alt="N"></a>');
+      expect(system).toContain('<picture><img src="images/6_5.svg?v=k" width="20" alt="6"></picture> <picture><img src="images/n_5.svg?v=k" width="20" alt="N"></picture>');
       expect(system.match(/images\/[a-z0-9]+_[1-4]\.svg/)).toBeNull();
       expect(capri.match(/images\/[a-z0-9]+_5\.svg/)).toBeNull();
     }
