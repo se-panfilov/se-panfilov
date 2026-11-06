@@ -1,0 +1,7 @@
+# Extend the official rules embedded in Gitleaks.
+# https://github.com/gitleaks/gitleaks#configuration
+title = "Cyberpunk 2077 tarot README secret scanning"
+minVersion = "v8.28.0"
+
+[extend]
+useDefault = true
