@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="108" viewBox="0 0 88 108" role="img" aria-label="Cyberpunk glitch glyph 0">
+<title>Cyberpunk glyph: 0</title>
+<defs>
+  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#8febf4" opacity=".10" stroke-width=".45"/></pattern>
+  <pattern id="noise" width="14" height="16" patternUnits="userSpaceOnUse"><path d="M2 5h3m7 7h-2" stroke="#36adbb" opacity=".17" stroke-width=".75"/></pattern>
+  <clipPath id="clip"><path d="M7 1H81L87 8V94L79 106H8L1 99V10Z"/></clipPath>
+  <clipPath id="gclip"><g transform="matrix(0.04454 0 0 -0.04454 15.4022 90.2082)"><path d="M551 233Q620 233 673.5 279.0Q727 325 763 414Q788 477 809.0 557.5Q830 638 848 748Q863 837 871.0 912.0Q879 987 879 1040Q879 1152 843.0 1204.5Q807 1257 732 1257Q662 1257 608.5 1212.5Q555 1168 520 1077Q493 1012 471.0 929.0Q449 846 433 748Q418 658 409.5 581.0Q401 504 401 451Q401 340 438.0 286.5Q475 233 551 233ZM1217 983Q1217 784 1167.5 596.0Q1118 408 1029 266Q938 120 809.0 45.5Q680 -29 522 -29Q302 -29 184.5 110.0Q67 249 67 510Q67 706 116.0 894.5Q165 1083 253 1223Q346 1370 473.5 1445.0Q601 1520 761 1520Q980 1520 1098.5 1380.5Q1217 1241 1217 983Z"/></g></clipPath>
+</defs>
+<!-- Black backed tile, cut corners, angular UI framing -->
+<path d="M7 1H81L87 8V94L79 106H8L1 99V10Z" fill="#070f14"/>
+<g clip-path="url(#clip)">
+ <rect width="88" height="108" fill="url(#noise)"/>
+ <path d="M0 17h88M0 87h88" stroke="#15323a" stroke-width=".8"/>
+ <path d="M5 26l25-17h35l-23 17ZM62 82l20-10v22l-20 10Z" fill="#132a32" opacity=".45"/>
+ <path d="M0 49h88M0 52h88" stroke="#17353b" opacity=".35"/>
+ <g transform="matrix(0.04454 0 0 -0.04454 15.4022 90.2082)"><path d="M551 233Q620 233 673.5 279.0Q727 325 763 414Q788 477 809.0 557.5Q830 638 848 748Q863 837 871.0 912.0Q879 987 879 1040Q879 1152 843.0 1204.5Q807 1257 732 1257Q662 1257 608.5 1212.5Q555 1168 520 1077Q493 1012 471.0 929.0Q449 846 433 748Q418 658 409.5 581.0Q401 504 401 451Q401 340 438.0 286.5Q475 233 551 233ZM1217 983Q1217 784 1167.5 596.0Q1118 408 1029 266Q938 120 809.0 45.5Q680 -29 522 -29Q302 -29 184.5 110.0Q67 249 67 510Q67 706 116.0 894.5Q165 1083 253 1223Q346 1370 473.5 1445.0Q601 1520 761 1520Q980 1520 1098.5 1380.5Q1217 1241 1217 983Z" fill="#f7e900"/></g>
+ <!-- thin displaced chromatic slices constrained to the glyph -->
+ <g clip-path="url(#gclip)">
+  <rect x="5" y="54" width="78" height="1.5" fill="#0a0d0c" opacity=".85"/>
+  <rect x="20" y="55" width="16" height="2.5" fill="#08e8f0"/>
+  <rect x="36" y="64" width="32" height="2" fill="#ff2ac6"/>
+  <rect x="10" y="70" width="40" height=".9" fill="#121219" opacity=".85"/>
+  <rect x="0" y="23" width="88" height="72" fill="url(#scan)" opacity=".7"/>
+ </g>
+ <!-- tiny signal fragments near glyph, not obscuring it -->
+ <path d="M10 52h13m35 68h17" fill="none" stroke="#00f1f4" stroke-width="1" opacity=".8"/>
+ <path d="M12 61h6M53 59h13" stroke="#f527a9" stroke-width="1" opacity=".8"/>
+</g>
+<path d="M7 1H81L87 8V94L79 106H8L1 99V10Z" fill="none" stroke="#e9ed00" stroke-width="1.4"/>
+<path d="M3 10L10 3h17M61 3h18l5 6M3 81v17l7 6h9M65 104h14l6-10" stroke="#fff500" stroke-width="2.2" fill="none"/>
+<path d="M10 13h8m-5 2h8m-5 2h8" stroke="#608f97" stroke-width="1.3"/>
+<path d="M29 13h19l4-4h17" fill="none" stroke="#13edf0" stroke-width=".8"/>
+<path d="M50 16h15l3-3h10" fill="none" stroke="#f52eac" stroke-width=".7"/>
+<path d="M9 93h16m-14 2h20m-21 2h13" stroke="#2a6570" stroke-width=".7"/>
+<path d="M63 94v5m4-5v5m4-5v5m4-5v5m4-5v5" stroke="#eaff00" stroke-width="1"/>
+<path d="M34 101h15l4-3h8" stroke="#11e6ed" stroke-width=".7" fill="none"/>
+</svg>
