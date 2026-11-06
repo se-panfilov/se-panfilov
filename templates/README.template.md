@@ -24,7 +24,7 @@
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** The f̸u̷ture? OHHH! I can do that! Heh̵e̷h̴e̸!
 <br/><br/>
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Let's see, let's s̸e̷e̴… What do we have for [**<!-- tarot:date:system:14 -->**]?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Let's see, let's s̸e̷e̴… What do we have for **<!-- tarot:date:system:14 -->**?
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Ooooh, **<!-- tarot:name -->**! Now t̸h̷a̴t̸'s interesting!
 <br/><br/>

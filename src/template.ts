@@ -144,7 +144,7 @@ const cacheKeyPattern = /^[A-Za-z0-9]{1,64}$/;
 export function renderImage(card: Card, cacheKey: string): string {
   if (!cacheKeyPattern.test(cacheKey)) throw new Error('The cache key must have 1 to 64 ASCII letters or digits.');
   // return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="${imageWidth}">`;
-  return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="100px">`;
+  return `<img src="${escapeHtml(encodePath(card.imagePath))}?v=${cacheKey}" alt="${escapeHtml(card.name)}" width="100%">`;
 }
 
 /** Make symbol images for each letter and digit of a text. Spaces stay. Other characters are kept as escaped text. */
