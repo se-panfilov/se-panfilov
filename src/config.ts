@@ -2,7 +2,9 @@
 export const defaultPaths = {
   assets: 'assets',
   template: 'templates/README.template.md',
-  output: 'README.md'
+  output: 'README.md',
+  /** The symbol images for `<!-- tarot:key:SYMBOL:SIZE -->`. */
+  images: 'images'
 } as const;
 
 /** The time zone of the daily reading. The GitHub Actions schedule uses the same zone. */
@@ -17,7 +19,8 @@ export const limits = {
   templateBytes: 256 * 1024,
   readmeBytes: 1024 * 1024,
   assetEntries: 10000,
-  assetDepth: 8
+  assetDepth: 8,
+  imageEntries: 10000
 } as const;
 
 /** The display width of the card image in pixels. */
