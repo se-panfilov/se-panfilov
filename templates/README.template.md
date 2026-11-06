@@ -1,4 +1,4 @@
-## Network Transmission Log [**<!-- tarot:date -->**]
+## Network Tr̷a̴n̸s̵m̴i̷s̸s̴i̶o̸n̷ Log [**<!-- tarot:date -->**]
 
 **[00:00:01]** Establishing connection…
 
@@ -24,7 +24,7 @@
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** The f̸u̷ture? OHHH! I can do that! Heh̵e̷h̴e̸!
 <br/><br/>
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Let's see, let's s̸e̷e̴… What do we have for **<!-- tarot:date -->**?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Let's see, let's s̸e̷e̴… What do we have for **<!-- tarot:date:capri:20 -->**?
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Ooooh, **<!-- tarot:name -->**! Now t̸h̷a̴t̸'s interesting!
 <br/><br/>
