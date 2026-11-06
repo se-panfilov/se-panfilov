@@ -34,7 +34,7 @@ describe('renderTemplate', () => {
 
 Date: 5 November 2026
 
-<img src="assets/The%20Fool.png?v=abc123" alt="The Fool" width="300">
+<img src="assets/The%20Fool.png?v=abc123" alt="The Fool" width="100%">
 
 ## The Fool
 
@@ -91,7 +91,7 @@ Bottom text
 
 describe('renderImage', () => {
   it('encodes the path and escapes HTML', () => {
-    expect(renderImage({ name: "Ace's & Co", text: 't', imagePath: 'assets/a b/c#d.png' }, 'k1')).toBe('<img src="assets/a%20b/c%23d.png?v=k1" alt="Ace&#39;s &amp; Co" width="300" >');
+    expect(renderImage({ name: "Ace's & Co", text: 't', imagePath: 'assets/a b/c#d.png' }, 'k1')).toBe('<img src="assets/a%20b/c%23d.png?v=k1" alt="Ace&#39;s &amp; Co" width="100%">');
   });
 
   it('rejects a cache key that is not alphanumeric', () => {
