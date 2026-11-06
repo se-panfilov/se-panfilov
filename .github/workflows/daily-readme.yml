@@ -10,9 +10,10 @@ name: Daily README
 
 on:
   schedule:
-    # 11:00 in Amsterdam. GitHub applies the time zone, including the daylight saving time change.
-    - cron: '0 11 * * *'
-      timezone: Europe/Amsterdam
+    # Cron uses UTC. 11:03 in Amsterdam is 09:03 UTC in summer and 10:03 UTC in winter, so the workflow starts
+    # at both times. The "gate" job continues only at 11:00 or later in Amsterdam, and only one time each day.
+    # A start some minutes after the full hour is less often delayed or dropped by GitHub.
+    - cron: '3 9,10 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -35,8 +36,47 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  gate:
+    name: Check the schedule
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      contents: read
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        env:
+          EVENT: ${{ github.event_name }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          # A manual start always continues.
+          if [ "$EVENT" != 'schedule' ]; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          hour="$(TZ=Europe/Amsterdam date +%H)"
+          today="$(TZ=Europe/Amsterdam date +%F)"
+          if [ "$hour" -lt 11 ]; then
+            echo "It is before 11:00 in Amsterdam. Nothing to do."
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Skip when the workflow already pushed README.md today (Amsterdam date).
+          bot='41898282%2Bgithub-actions%5Bbot%5D%40users.noreply.github.com'
+          last="$(gh api "repos/${REPOSITORY}/commits?path=README.md&author=${bot}&per_page=1" --jq '.[0].commit.committer.date // empty')"
+          if [ -n "$last" ] && [ "$(TZ=Europe/Amsterdam date -d "$last" +%F)" = "$today" ]; then
+            echo "README.md was already updated today. Nothing to do."
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo 'run=true' >> "$GITHUB_OUTPUT"
+
   generate:
     name: Generate README.md
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
