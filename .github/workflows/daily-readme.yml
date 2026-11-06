@@ -6,6 +6,8 @@
 # One-time setup: Settings → Actions → General → Workflow permissions → "Read and write permissions".
 # If master has branch protection or a ruleset, let GitHub Actions bypass it.
 
+#test line for a scheduled launch
+
 name: Daily README
 
 on:
