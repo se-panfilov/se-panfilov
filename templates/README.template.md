@@ -22,7 +22,7 @@
 
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** Too busy to play with you, choom. Capri, have some fun with our guest.
 <br/><br/>
-[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I <img src="images/b.svg?v={{tarot:cacheKey}}" width="22" alt="b"><img src="images/r.svg?v={{tarot:cacheKey}}" width="22" alt="r"><img src="images/e.svg?v={{tarot:cacheKey}}" width="22" alt="e"><img src="images/a.svg?v={{tarot:cacheKey}}" width="22" alt="a"><img src="images/k.svg?v={{tarot:cacheKey}}" width="22" alt="k"> something? Pretty please?
+[<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** O̷o̵oo̷h! Are we playing? Can I <img src="images/b.svg?v={{tarot:cacheKey}}" width="22" alt="b"><img src="images/r2.svg?v={{tarot:cacheKey}}" width="22" alt="r"><img src="images/e.svg?v={{tarot:cacheKey}}" width="22" alt="e"><img src="images/a.svg?v={{tarot:cacheKey}}" width="22" alt="a"><img src="images/k.svg?v={{tarot:cacheKey}}" width="22" alt="k"> something? Pretty please?
 <br/><br/>
 [<img src="images/exception.png?v={{tarot:cacheKey}}" width="28" alt="Exception">] **>>** Just show 'em what the future holds. I've got work to do.
 <br/><br/>
