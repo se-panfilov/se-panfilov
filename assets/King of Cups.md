@@ -1,0 +1,1 @@
+A King of Cups is a creative and emotionally-driven person. They are strong individuals, who realize the importance of feelings. Intuition helps them navigate their lives. When fate is in their favor, compassion guides their actions. When they're at odds with fate, it'd be unwise to trust them.

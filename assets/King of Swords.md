@@ -1,0 +1,1 @@
+Two things matter above all else for a King of Swords: logic and conviction. They represent a person with a precise moral compass, who is known for their caring demeanor. However, enemies beware - the King of Swords is a ruthless opponent, who will not rest until you are punished and left to be torn apart by hounds of fate.

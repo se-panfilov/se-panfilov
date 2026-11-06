@@ -1,0 +1,1 @@
+The Knight of Wands does not wait for permission. The presence of obstacles only proves they're on the right path. Beneath an outward swagger lies a genuine hunger for greatness, and fear takes a back seat when adventure calls. They leap before looking, but even when they fall they never stop moving forward.

@@ -1,0 +1,1 @@
+The Page of Swords never drops their guard. Curious and calculating, their inquisitive and innovative nature defines their trajectory and the fortunes of those around them. This card signifies an approaching beginning that requires careful consideration of all pathways and outcomes. When preparing for anything, one's awareness becomes their armor.

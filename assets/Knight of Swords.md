@@ -1,0 +1,1 @@
+The Knight of Swords is a harbinger of dramatic change. It signifies leaving the comfort of the known world for new ventures without looking back, no matter the risk. It represents one who values honesty and clarity above all else. Their forthright nature can sometimes sting; yet, this aversion to deceit should be considered a gift for friend and foe alike.

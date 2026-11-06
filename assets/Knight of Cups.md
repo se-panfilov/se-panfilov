@@ -1,0 +1,1 @@
+The Knight of Cups is a seeker with stars in their eyes and a burning fire in their chest. They thrive on taking action, driven not by logic but by longing. This is a card of newfound vision and ideas that stir the soul. When the world shatters their heart, the reckoning may echo violently.

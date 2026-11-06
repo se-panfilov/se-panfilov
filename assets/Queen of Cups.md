@@ -1,0 +1,1 @@
+The Queen of Cups is a wellspring of calm. She listens more than she speaks, understands more than she reveals, and sees what others bury deep. In her presence, broken spirits can learn to hope again.

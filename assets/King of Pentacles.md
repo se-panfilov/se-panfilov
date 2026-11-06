@@ -1,0 +1,1 @@
+The King of Pentacles is imperious. They represent enterprise, pragmatism, but also attachment. From such a person one can expect coldness or attachment to material possessions; they are likely to turn your world upside down sooner or later.

@@ -1,0 +1,1 @@
+The Page of Wands lives for sparks of inspiration and the promise of new opportunities. Growth is the only constant; change - the only rule. Their journey is messy, imperfect, but always high-spirited. In the craters of ruin they sow all they can, knowing whatever sprouts may be the beginning of something revolutionary.

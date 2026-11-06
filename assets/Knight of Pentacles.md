@@ -1,0 +1,1 @@
+When a line is crossed, the Knight of Pentacles is who you want standing at your side. This card represents those who protect what is theirs. The Knight's stubborn nature does not serve the pursuit of new glory or fame, but the safeguarding of legacy. It also symbolizes the preservation of songs written in one's own blood.

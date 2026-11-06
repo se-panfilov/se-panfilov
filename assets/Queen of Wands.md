@@ -1,0 +1,1 @@
+The Queen of Wands stands firm when others waver and flee. She is both bulwark and spearhead. Her courage isn't loud, but it echoes with a spirit of independence that endures long after the noise fades. Drawing this card marks a moment when one must protect what matters most.
