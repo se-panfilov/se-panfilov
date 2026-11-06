@@ -1,8 +1,4 @@
-## Network Transmission Log
-
-```diff
-+ [**<!-- tarot:date -->**]
-```
+## Network Transmission Log [**<!-- tarot:date -->**]
 
 **[00:00:01]** Establishing connection…
 
@@ -34,11 +30,14 @@
 <br/><br/>
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Wanna know what happens n̴e̷x̸t? Of course you do! Here, take a peek!
 
+
+```diff
 > **<!-- tarot:name -->**
 >
 > <!-- tarot:text -->
 
 <p> <!-- tarot:image --> </p>
+```
 
 [<img src="images/capri.png?v={{tarot:cacheKey}}" width="28" alt="Capri">] **>>** Heh̴e̷h̸e̴! Good luck with **t̷h̴a̸t**, <img src="images/c.svg?v={{tarot:cacheKey}}" width="24" alt="c"><img src="images/h.svg?v={{tarot:cacheKey}}" width="21" alt="h"><img src="images/o1.svg?v={{tarot:cacheKey}}" width="24" alt="o"><img src="images/o3.svg?v={{tarot:cacheKey}}" width="22" alt="o"><img src="images/m.svg?v={{tarot:cacheKey}}" width="23" alt="m"><img src="images/excl.svg?v={{tarot:cacheKey}}" width="18" alt="!"> You're gonna need it!
 <br/><br/>
