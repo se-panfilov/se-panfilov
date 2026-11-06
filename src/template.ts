@@ -9,6 +9,7 @@ import { GeneratorError } from '@tarot/errors';
  * for example in an HTML attribute.
  * `<!-- tarot:cacheKey -->` gives the cache key of the run. Use it in other image links, for example
  * `<img src="images/capri.png?v={{tarot:cacheKey}}" alt="Capri">`.
+ * `<!-- tarot:key:SYMBOL:SIZE -->` gives the image of one symbol, for example `<!-- tarot:key:a:24 -->`. See `@tarot/glyphs`.
  */
 export const placeholders = ['image', 'text', 'name', 'date', 'cacheKey'] as const;
 export type Placeholder = (typeof placeholders)[number];
@@ -23,7 +24,31 @@ const occurrences: Record<Placeholder, { readonly min: number; readonly max: num
 };
 
 // The two forms of a placeholder: `<!-- tarot:name -->` and `{{tarot:name}}`.
-const placeholderPattern = /<!--\s*tarot:([A-Za-z0-9_-]*)\s*-->|\{\{\s*tarot:([A-Za-z0-9_-]*)\s*\}\}/g;
+const placeholderPattern = /<!--\s*tarot:([A-Za-z0-9_:!?#@.,-]*)\s*-->|\{\{\s*tarot:([A-Za-z0-9_:!?#@.,-]*)\s*\}\}/g;
+
+/** A symbol placeholder: `key`, one letter, digit, or symbol, and the image width in pixels (1 to 1000). */
+const keyPattern = /^key:([A-Za-z0-9!?#@.,]):([1-9]\d{0,3})$/;
+const maxKeySize = 1000;
+
+export type KeyPlaceholder = { readonly symbol: string; readonly size: number };
+
+/** Parse the name of a symbol placeholder, for example `key:a:24`. Returns undefined for other names. */
+export function parseKey(name: string): KeyPlaceholder | undefined {
+  const match = keyPattern.exec(name);
+  if (!match?.[1] || !match[2]) return undefined;
+  const size = Number(match[2]);
+  return size <= maxKeySize ? { symbol: match[1], size } : undefined;
+}
+
+/** The symbol placeholders in a template, in order. */
+export function keyPlaceholders(template: string): KeyPlaceholder[] {
+  const keys: KeyPlaceholder[] = [];
+  for (const match of template.matchAll(placeholderPattern)) {
+    const key = parseKey(match[1] ?? match[2] ?? '');
+    if (key) keys.push(key);
+  }
+  return keys;
+}
 
 function isPlaceholder(value: string): value is Placeholder {
   return (placeholders as readonly string[]).includes(value);
@@ -35,8 +60,15 @@ export function templateProblems(template: string): string[] {
   const counts = new Map<Placeholder, number>();
   for (const match of template.matchAll(placeholderPattern)) {
     const name = match[1] ?? match[2] ?? '';
+    if (name.startsWith('key:')) {
+      if (!parseKey(name))
+        problems.push(
+          `The placeholder "${match[0]}" is not valid. Use <!-- tarot:key:SYMBOL:SIZE -->: one letter, digit, or one of ! ? # @ . , and a width from 1 to ${maxKeySize}, for example <!-- tarot:key:a:24 -->.`
+        );
+      continue;
+    }
     if (!isPlaceholder(name)) {
-      problems.push(`Unknown placeholder "${match[0]}". Known placeholders: ${placeholders.map((item) => `<!-- tarot:${item} -->`).join(', ')}.`);
+      problems.push(`Unknown placeholder "${match[0]}". Known placeholders: ${placeholders.map((item) => `<!-- tarot:${item} -->`).join(', ')}, <!-- tarot:key:SYMBOL:SIZE -->.`);
       continue;
     }
     counts.set(name, (counts.get(name) ?? 0) + 1);
@@ -52,7 +84,7 @@ export function templateProblems(template: string): string[] {
   return problems;
 }
 
-function escapeHtml(value: string): string {
+export function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
@@ -78,18 +110,24 @@ export type RenderValues = {
   readonly date: string;
   /** A random value for the image query string. */
   readonly cacheKey: string;
+  /** Makes the image of one symbol placeholder. Necessary only when the template has symbol placeholders. */
+  readonly renderKey?: ((key: KeyPlaceholder) => string) | undefined;
 };
 
 /**
  * Put the card into the template. All placeholders are replaced in one pass.
  * Thus text from a card file cannot add placeholders or change other parts of the template.
  */
-export function renderTemplate(template: string, card: Card, { date, cacheKey }: RenderValues): string {
+export function renderTemplate(template: string, card: Card, { date, cacheKey, renderKey }: RenderValues): string {
   const problems = templateProblems(template);
   if (problems.length) throw new GeneratorError(`The template is not valid:\n- ${problems.join('\n- ')}`);
   const values: Record<Placeholder, string> = { image: renderImage(card, cacheKey), text: card.text, name: card.name, date, cacheKey };
   return template.replace(placeholderPattern, (_match, comment: string | undefined, braces: string | undefined) => {
     const name = comment ?? braces ?? '';
-    return isPlaceholder(name) ? values[name] : '';
+    if (isPlaceholder(name)) return values[name];
+    const key = parseKey(name);
+    if (!key) return '';
+    if (!renderKey) throw new GeneratorError('The template has symbol placeholders, but no symbol images are available.');
+    return renderKey(key);
   });
 }
