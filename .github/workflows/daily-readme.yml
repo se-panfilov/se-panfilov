@@ -12,10 +12,8 @@ name: Daily README
 
 on:
   schedule:
-    # Cron uses UTC. 11:03 in Amsterdam is 09:03 UTC in summer and 10:03 UTC in winter, so the workflow starts
-    # at both times. The "gate" job continues only at 11:00 or later in Amsterdam, and only one time each day.
-    # A start some minutes after the full hour is less often delayed or dropped by GitHub.
-    - cron: '3 9,10 * * *'
+    # Cron uses UTC. 02:30 in Amsterdam, so the workflow starts
+    - cron: '30 0,1 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -60,8 +58,8 @@ jobs:
           fi
           hour="$(TZ=Europe/Amsterdam date +%H)"
           today="$(TZ=Europe/Amsterdam date +%F)"
-          if [ "$hour" -lt 11 ]; then
-            echo "It is before 11:00 in Amsterdam. Nothing to do."
+          if [ "$hour" -lt 2 ]; then
+            echo "It is before 02:00 in Amsterdam. Nothing to do."
             echo 'run=false' >> "$GITHUB_OUTPUT"
             exit 0
           fi
